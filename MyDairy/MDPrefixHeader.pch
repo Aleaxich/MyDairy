@@ -1,0 +1,22 @@
+//
+//  MDPrefixHeader.pch
+//  MyDairy
+//
+//  Created by 匿名用户的笔记本 on 2023/3/18.
+//  Copyright © 2023 匿名用户的笔记本. All rights reserved.
+//
+
+#ifndef MDPrefixHeader_pch
+#define MDPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define SCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
+#define SCREENH_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define MDWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define MDStrongSelf(type) __strong typeof(type) type = weak##type;
+
+
+
+#endif /* MDPrefixHeader_pch */

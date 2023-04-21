@@ -1,12 +1,18 @@
 //
 //  AppDelegate.m
-//  MyDairy
+//  MyDairyAPP
 //
 //  Created by 匿名用户的笔记本 on 2023/3/13.
 //  Copyright © 2023 匿名用户的笔记本. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "MDHomeViewController.h"
+#import "MyDairy-Swift.h"
+#import "MDSettingViewController.h"
+#import "SVProgressHUD.h"
+
+
 
 @interface AppDelegate ()
 
@@ -16,25 +22,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    MDHomeViewController *homeVC = [[MDHomeViewController alloc] init];
+    homeVC.view.frame = [UIScreen mainScreen].bounds;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     return YES;
-}
-
-
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
-}
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
 
@@ -76,8 +70,7 @@
     NSManagedObjectContext *context = self.persistentContainer.viewContext;
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        [SVProgressHUD showErrorWithStatus:@"保存失败，请重试！"];
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }

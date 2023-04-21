@@ -3,34 +3,131 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A80AD38429BF56FD00AE74F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A80AD38329BF56FD00AE74F1 /* AppDelegate.m */; };
-		A80AD38729BF56FD00AE74F1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A80AD38629BF56FD00AE74F1 /* SceneDelegate.m */; };
-		A80AD38A29BF56FD00AE74F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80AD38929BF56FD00AE74F1 /* ViewController.m */; };
-		A80AD38D29BF56FD00AE74F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80AD38B29BF56FD00AE74F1 /* Main.storyboard */; };
 		A80AD39029BF56FD00AE74F1 /* MyDairy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A80AD38E29BF56FD00AE74F1 /* MyDairy.xcdatamodeld */; };
 		A80AD39229BF56FF00AE74F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80AD39129BF56FF00AE74F1 /* Assets.xcassets */; };
-		A80AD39529BF56FF00AE74F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80AD39329BF56FF00AE74F1 /* LaunchScreen.storyboard */; };
 		A80AD39829BF56FF00AE74F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A80AD39729BF56FF00AE74F1 /* main.m */; };
+		A80AD3A029BF572400AE74F1 /* MDWriteNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80AD39F29BF572400AE74F1 /* MDWriteNoteViewController.swift */; };
+		A80AD3AD29BF578400AE74F1 /* MDHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A80AD3A229BF578300AE74F1 /* MDHomeTableViewCell.m */; };
+		A80AD3AE29BF578400AE74F1 /* MDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80AD3A529BF578400AE74F1 /* MDHomeViewController.m */; };
+		A80AD3AF29BF578400AE74F1 /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80AD3A729BF578400AE74F1 /* MDBaseViewController.m */; };
+		A80AD3B129BF578400AE74F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A80AD3AA29BF578400AE74F1 /* AppDelegate.m */; };
+		A80AD3B229BF578400AE74F1 /* MDHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A80AD3AC29BF578400AE74F1 /* MDHomeViewModel.m */; };
+		A860EF1C29E6E48300F057B1 /* MDPicturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF1B29E6E48300F057B1 /* MDPicturesView.swift */; };
+		A860EF1E29E6E82D00F057B1 /* MDPicturesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF1D29E6E82D00F057B1 /* MDPicturesViewCell.swift */; };
+		A860EF3A29EBE0A000F057B1 /* MDPersonalCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF3929EBE0A000F057B1 /* MDPersonalCenterViewController.swift */; };
+		A860EF3C29EBE61200F057B1 /* MDPersonalCenterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF3B29EBE61200F057B1 /* MDPersonalCenterItemCell.swift */; };
+		A860EF3E29EBEA1800F057B1 /* MDPersonalCenterSettingItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF3D29EBEA1800F057B1 /* MDPersonalCenterSettingItemModel.swift */; };
+		A860EF4029EC44AA00F057B1 /* MDPhotoWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF3F29EC44AA00F057B1 /* MDPhotoWallViewController.swift */; };
+		A860EF4229ED291F00F057B1 /* MDPhotoWallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF4129ED291F00F057B1 /* MDPhotoWallCell.swift */; };
+		A860EF4429ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF4329ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift */; };
+		A860EF4629ED621600F057B1 /* MDPhotoWallDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF4529ED621600F057B1 /* MDPhotoWallDetailView.swift */; };
+		A860EF4829ED631000F057B1 /* MDPhotoDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF4729ED631000F057B1 /* MDPhotoDetailViewCell.swift */; };
+		A860EF4A29EE689E00F057B1 /* MDDetailViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF4929EE689E00F057B1 /* MDDetailViewFlowLayout.swift */; };
+		A8852A9129D55BF30013FB0B /* UIViewController+MDCustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A8852A9029D55BF30013FB0B /* UIViewController+MDCustomNavBar.m */; };
+		A8852A9429D55CB90013FB0B /* MDCustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A8852A9329D55CB90013FB0B /* MDCustomNavBar.m */; };
+		A8B43DD929C041B400FADAF0 /* MDCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DD829C041B400FADAF0 /* MDCoreDataManager.swift */; };
+		A8B43DDE29C1AEDE00FADAF0 /* MDContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DDD29C1AEDE00FADAF0 /* MDContextManager.swift */; };
+		A8B43DE729C32C8900FADAF0 /* MDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DE629C32C8900FADAF0 /* MDSettingViewController.m */; };
+		A8B43DF329C5B55600FADAF0 /* MDDateAndWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DF229C5B55600FADAF0 /* MDDateAndWeatherView.swift */; };
+		A8B43DF629C5C8DC00FADAF0 /* MDConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DF529C5C8DC00FADAF0 /* MDConstant.swift */; };
+		A8B43DF829C5DB0E00FADAF0 /* MDDatePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DF729C5DB0E00FADAF0 /* MDDatePopUpView.swift */; };
+		A8B43DFA29C719B600FADAF0 /* MDWeatherPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DF929C719B600FADAF0 /* MDWeatherPopUpView.swift */; };
+		A8B43DFC29C71AA500FADAF0 /* MDBasePopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DFB29C71AA500FADAF0 /* MDBasePopover.swift */; };
+		A8B43E0029C7207A00FADAF0 /* MDCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DFF29C7207A00FADAF0 /* MDCollectionItemCell.swift */; };
+		A8B43E0429C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0329C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift */; };
+		A8B43E0629C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0529C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift */; };
+		A8B43E0A29C869D000FADAF0 /* MDWriteNoteSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0929C869D000FADAF0 /* MDWriteNoteSettingCell.swift */; };
+		A8B43E0E29C8889000FADAF0 /* UIColor+MDColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0D29C8889000FADAF0 /* UIColor+MDColorHelper.m */; };
+		A8B43E1029C96DB700FADAF0 /* UIButton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0F29C96DB700FADAF0 /* UIButton+Action.swift */; };
+		A8B43E1229C9720E00FADAF0 /* MDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E1129C9720E00FADAF0 /* MDKeys.swift */; };
+		A8B43E1529C9DF3100FADAF0 /* TestDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E1429C9DF3100FADAF0 /* TestDownloadViewController.m */; };
+		A8BF494E29D19C0F007BB6C7 /* MDFontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF494D29D19C0F007BB6C7 /* MDFontManager.m */; };
+		A8BF495029D1B0A6007BB6C7 /* MDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF494F29D1B0A6007BB6C7 /* MDTextView.swift */; };
+		A8BF495229D1B8AB007BB6C7 /* MDContextManager+Noti.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF495129D1B8AB007BB6C7 /* MDContextManager+Noti.swift */; };
+		A8BF495529D1F997007BB6C7 /* MDTextInfoModelTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF495429D1F997007BB6C7 /* MDTextInfoModelTransformer.m */; };
+		A8BF495829D1FFD5007BB6C7 /* MDTextInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF495729D1FFD5007BB6C7 /* MDTextInfoModel.m */; };
+		A8BF496929D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF496729D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.m */; };
+		A8BF496A29D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF496829D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.m */; };
+		A8BF496E29D44E36007BB6C7 /* MDContextManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF496D29D44E36007BB6C7 /* MDContextManager+Delegate.swift */; };
+		A8BF497129D45338007BB6C7 /* MDBaseFuncHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF497029D45338007BB6C7 /* MDBaseFuncHelper.m */; };
+		D3FD0957AB4D55434CC09DD4 /* libPods-MyDairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C83D93AE5864692AF45E2E4 /* libPods-MyDairy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06C1F25BF12DE995E781E500 /* Pods-MyDairy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDairy.debug.xcconfig"; path = "Target Support Files/Pods-MyDairy/Pods-MyDairy.debug.xcconfig"; sourceTree = "<group>"; };
+		0C83D93AE5864692AF45E2E4 /* libPods-MyDairy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyDairy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F672E4504BBB2E0FFE8DC4 /* Pods-MyDairy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDairy.release.xcconfig"; path = "Target Support Files/Pods-MyDairy/Pods-MyDairy.release.xcconfig"; sourceTree = "<group>"; };
 		A80AD37F29BF56FD00AE74F1 /* MyDairy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDairy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A80AD38229BF56FD00AE74F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A80AD38329BF56FD00AE74F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A80AD38529BF56FD00AE74F1 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		A80AD38629BF56FD00AE74F1 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A80AD38829BF56FD00AE74F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A80AD38929BF56FD00AE74F1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A80AD38C29BF56FD00AE74F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A80AD38F29BF56FD00AE74F1 /* MyDairy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyDairy.xcdatamodel; sourceTree = "<group>"; };
 		A80AD39129BF56FF00AE74F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A80AD39429BF56FF00AE74F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A80AD39629BF56FF00AE74F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80AD39729BF56FF00AE74F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A80AD39E29BF572300AE74F1 /* MyDairy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyDairy-Bridging-Header.h"; sourceTree = "<group>"; };
+		A80AD39F29BF572400AE74F1 /* MDWriteNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWriteNoteViewController.swift; sourceTree = "<group>"; };
+		A80AD3A129BF578300AE74F1 /* MDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDBaseViewController.h; path = ../HomePage/MDBaseViewController.h; sourceTree = "<group>"; };
+		A80AD3A229BF578300AE74F1 /* MDHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHomeTableViewCell.m; sourceTree = "<group>"; };
+		A80AD3A329BF578400AE74F1 /* MDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHomeViewController.h; sourceTree = "<group>"; };
+		A80AD3A529BF578400AE74F1 /* MDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHomeViewController.m; sourceTree = "<group>"; };
+		A80AD3A629BF578400AE74F1 /* MDHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHomeViewModel.h; sourceTree = "<group>"; };
+		A80AD3A729BF578400AE74F1 /* MDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDBaseViewController.m; path = ../HomePage/MDBaseViewController.m; sourceTree = "<group>"; };
+		A80AD3A929BF578400AE74F1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A80AD3AA29BF578400AE74F1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A80AD3AB29BF578400AE74F1 /* MDHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHomeTableViewCell.h; sourceTree = "<group>"; };
+		A80AD3AC29BF578400AE74F1 /* MDHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHomeViewModel.m; sourceTree = "<group>"; };
+		A860EF1B29E6E48300F057B1 /* MDPicturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPicturesView.swift; sourceTree = "<group>"; };
+		A860EF1D29E6E82D00F057B1 /* MDPicturesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPicturesViewCell.swift; sourceTree = "<group>"; };
+		A860EF3929EBE0A000F057B1 /* MDPersonalCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPersonalCenterViewController.swift; sourceTree = "<group>"; };
+		A860EF3B29EBE61200F057B1 /* MDPersonalCenterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPersonalCenterItemCell.swift; sourceTree = "<group>"; };
+		A860EF3D29EBEA1800F057B1 /* MDPersonalCenterSettingItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPersonalCenterSettingItemModel.swift; sourceTree = "<group>"; };
+		A860EF3F29EC44AA00F057B1 /* MDPhotoWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPhotoWallViewController.swift; sourceTree = "<group>"; };
+		A860EF4129ED291F00F057B1 /* MDPhotoWallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPhotoWallCell.swift; sourceTree = "<group>"; };
+		A860EF4329ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPhotoWallHeaderView.swift; sourceTree = "<group>"; };
+		A860EF4529ED621600F057B1 /* MDPhotoWallDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPhotoWallDetailView.swift; sourceTree = "<group>"; };
+		A860EF4729ED631000F057B1 /* MDPhotoDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPhotoDetailViewCell.swift; sourceTree = "<group>"; };
+		A860EF4929EE689E00F057B1 /* MDDetailViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDDetailViewFlowLayout.swift; sourceTree = "<group>"; };
+		A8852A8F29D55BF30013FB0B /* UIViewController+MDCustomNavBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MDCustomNavBar.h"; sourceTree = "<group>"; };
+		A8852A9029D55BF30013FB0B /* UIViewController+MDCustomNavBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MDCustomNavBar.m"; sourceTree = "<group>"; };
+		A8852A9229D55CB90013FB0B /* MDCustomNavBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCustomNavBar.h; sourceTree = "<group>"; };
+		A8852A9329D55CB90013FB0B /* MDCustomNavBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDCustomNavBar.m; sourceTree = "<group>"; };
+		A8B43DD829C041B400FADAF0 /* MDCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCoreDataManager.swift; sourceTree = "<group>"; };
+		A8B43DDD29C1AEDE00FADAF0 /* MDContextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDContextManager.swift; sourceTree = "<group>"; };
+		A8B43DE529C32C8900FADAF0 /* MDSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSettingViewController.h; sourceTree = "<group>"; };
+		A8B43DE629C32C8900FADAF0 /* MDSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSettingViewController.m; sourceTree = "<group>"; };
+		A8B43DF229C5B55600FADAF0 /* MDDateAndWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDDateAndWeatherView.swift; sourceTree = "<group>"; };
+		A8B43DF429C5C36E00FADAF0 /* MDPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDPrefixHeader.pch; sourceTree = "<group>"; };
+		A8B43DF529C5C8DC00FADAF0 /* MDConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDConstant.swift; sourceTree = "<group>"; };
+		A8B43DF729C5DB0E00FADAF0 /* MDDatePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDDatePopUpView.swift; sourceTree = "<group>"; };
+		A8B43DF929C719B600FADAF0 /* MDWeatherPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWeatherPopUpView.swift; sourceTree = "<group>"; };
+		A8B43DFB29C71AA500FADAF0 /* MDBasePopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDBasePopover.swift; sourceTree = "<group>"; };
+		A8B43DFF29C7207A00FADAF0 /* MDCollectionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCollectionItemCell.swift; sourceTree = "<group>"; };
+		A8B43E0329C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWriteNoteSettingPopover.swift; sourceTree = "<group>"; };
+		A8B43E0529C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWriteNoteSettingViewModel.swift; sourceTree = "<group>"; };
+		A8B43E0929C869D000FADAF0 /* MDWriteNoteSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWriteNoteSettingCell.swift; sourceTree = "<group>"; };
+		A8B43E0C29C8889000FADAF0 /* UIColor+MDColorHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MDColorHelper.h"; sourceTree = "<group>"; };
+		A8B43E0D29C8889000FADAF0 /* UIColor+MDColorHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MDColorHelper.m"; sourceTree = "<group>"; };
+		A8B43E0F29C96DB700FADAF0 /* UIButton+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Action.swift"; sourceTree = "<group>"; };
+		A8B43E1129C9720E00FADAF0 /* MDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDKeys.swift; sourceTree = "<group>"; };
+		A8B43E1329C9DF3100FADAF0 /* TestDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDownloadViewController.h; sourceTree = "<group>"; };
+		A8B43E1429C9DF3100FADAF0 /* TestDownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDownloadViewController.m; sourceTree = "<group>"; };
+		A8BF494C29D19C0F007BB6C7 /* MDFontManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFontManager.h; sourceTree = "<group>"; };
+		A8BF494D29D19C0F007BB6C7 /* MDFontManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFontManager.m; sourceTree = "<group>"; };
+		A8BF494F29D1B0A6007BB6C7 /* MDTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextView.swift; sourceTree = "<group>"; };
+		A8BF495129D1B8AB007BB6C7 /* MDContextManager+Noti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MDContextManager+Noti.swift"; sourceTree = "<group>"; };
+		A8BF495329D1F997007BB6C7 /* MDTextInfoModelTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTextInfoModelTransformer.h; sourceTree = "<group>"; };
+		A8BF495429D1F997007BB6C7 /* MDTextInfoModelTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTextInfoModelTransformer.m; sourceTree = "<group>"; };
+		A8BF495629D1FFD5007BB6C7 /* MDTextInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTextInfoModel.h; sourceTree = "<group>"; };
+		A8BF495729D1FFD5007BB6C7 /* MDTextInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTextInfoModel.m; sourceTree = "<group>"; };
+		A8BF496529D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MDDairyCommonModel+CoreDataProperties.h"; path = "MyDairy/MDDairyCommonModel+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		A8BF496629D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MDDairyCommonModel+CoreDataClass.h"; path = "MyDairy/MDDairyCommonModel+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
+		A8BF496729D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MDDairyCommonModel+CoreDataClass.m"; path = "MyDairy/MDDairyCommonModel+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
+		A8BF496829D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MDDairyCommonModel+CoreDataProperties.m"; path = "MyDairy/MDDairyCommonModel+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
+		A8BF496D29D44E36007BB6C7 /* MDContextManager+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MDContextManager+Delegate.swift"; sourceTree = "<group>"; };
+		A8BF496F29D45338007BB6C7 /* MDBaseFuncHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBaseFuncHelper.h; sourceTree = "<group>"; };
+		A8BF497029D45338007BB6C7 /* MDBaseFuncHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDBaseFuncHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +135,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3FD0957AB4D55434CC09DD4 /* libPods-MyDairy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74BA6482BFD6B016F052DFDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06C1F25BF12DE995E781E500 /* Pods-MyDairy.debug.xcconfig */,
+				75F672E4504BBB2E0FFE8DC4 /* Pods-MyDairy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A80AD37629BF56FD00AE74F1 = {
 			isa = PBXGroup;
 			children = (
 				A80AD38129BF56FD00AE74F1 /* MyDairy */,
 				A80AD38029BF56FD00AE74F1 /* Products */,
+				74BA6482BFD6B016F052DFDC /* Pods */,
+				ED43E8D680E071CEC708E8FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,20 +172,154 @@
 		A80AD38129BF56FD00AE74F1 /* MyDairy */ = {
 			isa = PBXGroup;
 			children = (
-				A80AD38229BF56FD00AE74F1 /* AppDelegate.h */,
-				A80AD38329BF56FD00AE74F1 /* AppDelegate.m */,
-				A80AD38529BF56FD00AE74F1 /* SceneDelegate.h */,
-				A80AD38629BF56FD00AE74F1 /* SceneDelegate.m */,
-				A80AD38829BF56FD00AE74F1 /* ViewController.h */,
-				A80AD38929BF56FD00AE74F1 /* ViewController.m */,
-				A80AD38B29BF56FD00AE74F1 /* Main.storyboard */,
 				A80AD39129BF56FF00AE74F1 /* Assets.xcassets */,
-				A80AD39329BF56FF00AE74F1 /* LaunchScreen.storyboard */,
 				A80AD39629BF56FF00AE74F1 /* Info.plist */,
 				A80AD39729BF56FF00AE74F1 /* main.m */,
 				A80AD38E29BF56FD00AE74F1 /* MyDairy.xcdatamodeld */,
+				A80AD3A929BF578400AE74F1 /* AppDelegate.h */,
+				A80AD3AA29BF578400AE74F1 /* AppDelegate.m */,
+				A8B43DF429C5C36E00FADAF0 /* MDPrefixHeader.pch */,
+				A8B43DF529C5C8DC00FADAF0 /* MDConstant.swift */,
+				A8B43DE829C5AEBC00FADAF0 /* MDBase */,
+				A8B43DEA29C5B00500FADAF0 /* Models */,
+				A8B43DEB29C5B02D00FADAF0 /* HomePage */,
+				A860EF3829EBDF8700F057B1 /* MDPersonalCenterModule */,
+				A8B43DEF29C5B4C600FADAF0 /* MDWirteDairyModule */,
+				A80AD39E29BF572300AE74F1 /* MyDairy-Bridging-Header.h */,
+				A8B43DE529C32C8900FADAF0 /* MDSettingViewController.h */,
+				A8B43DE629C32C8900FADAF0 /* MDSettingViewController.m */,
 			);
 			path = MyDairy;
+			sourceTree = "<group>";
+		};
+		A860EF3829EBDF8700F057B1 /* MDPersonalCenterModule */ = {
+			isa = PBXGroup;
+			children = (
+				A860EF3929EBE0A000F057B1 /* MDPersonalCenterViewController.swift */,
+				A860EF3B29EBE61200F057B1 /* MDPersonalCenterItemCell.swift */,
+				A860EF3D29EBEA1800F057B1 /* MDPersonalCenterSettingItemModel.swift */,
+				A860EF3F29EC44AA00F057B1 /* MDPhotoWallViewController.swift */,
+				A860EF4129ED291F00F057B1 /* MDPhotoWallCell.swift */,
+				A860EF4329ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift */,
+				A860EF4529ED621600F057B1 /* MDPhotoWallDetailView.swift */,
+				A860EF4729ED631000F057B1 /* MDPhotoDetailViewCell.swift */,
+				A860EF4929EE689E00F057B1 /* MDDetailViewFlowLayout.swift */,
+			);
+			path = MDPersonalCenterModule;
+			sourceTree = "<group>";
+		};
+		A8B43DE829C5AEBC00FADAF0 /* MDBase */ = {
+			isa = PBXGroup;
+			children = (
+				A80AD3A129BF578300AE74F1 /* MDBaseViewController.h */,
+				A80AD3A729BF578400AE74F1 /* MDBaseViewController.m */,
+				A8B43E0C29C8889000FADAF0 /* UIColor+MDColorHelper.h */,
+				A8B43E0D29C8889000FADAF0 /* UIColor+MDColorHelper.m */,
+				A8B43E0F29C96DB700FADAF0 /* UIButton+Action.swift */,
+				A8B43E1129C9720E00FADAF0 /* MDKeys.swift */,
+				A8BF496F29D45338007BB6C7 /* MDBaseFuncHelper.h */,
+				A8BF497029D45338007BB6C7 /* MDBaseFuncHelper.m */,
+				A8852A8F29D55BF30013FB0B /* UIViewController+MDCustomNavBar.h */,
+				A8852A9029D55BF30013FB0B /* UIViewController+MDCustomNavBar.m */,
+				A8852A9229D55CB90013FB0B /* MDCustomNavBar.h */,
+				A8852A9329D55CB90013FB0B /* MDCustomNavBar.m */,
+			);
+			path = MDBase;
+			sourceTree = "<group>";
+		};
+		A8B43DEA29C5B00500FADAF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF496529D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.h */,
+				A8BF496629D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.h */,
+				A8BF496729D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.m */,
+				A8BF496829D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.m */,
+				A8BF495329D1F997007BB6C7 /* MDTextInfoModelTransformer.h */,
+				A8BF495429D1F997007BB6C7 /* MDTextInfoModelTransformer.m */,
+				A8BF495629D1FFD5007BB6C7 /* MDTextInfoModel.h */,
+				A8BF495729D1FFD5007BB6C7 /* MDTextInfoModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8B43DEB29C5B02D00FADAF0 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				A8B43DED29C5B48A00FADAF0 /* Cells */,
+				A8B43DEC29C5B06400FADAF0 /* ViewModel */,
+				A80AD3A329BF578400AE74F1 /* MDHomeViewController.h */,
+				A80AD3A529BF578400AE74F1 /* MDHomeViewController.m */,
+				A8B43E1329C9DF3100FADAF0 /* TestDownloadViewController.h */,
+				A8B43E1429C9DF3100FADAF0 /* TestDownloadViewController.m */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		A8B43DEC29C5B06400FADAF0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A80AD3A629BF578400AE74F1 /* MDHomeViewModel.h */,
+				A80AD3AC29BF578400AE74F1 /* MDHomeViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A8B43DED29C5B48A00FADAF0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A80AD3AB29BF578400AE74F1 /* MDHomeTableViewCell.h */,
+				A80AD3A229BF578300AE74F1 /* MDHomeTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A8B43DEF29C5B4C600FADAF0 /* MDWirteDairyModule */ = {
+			isa = PBXGroup;
+			children = (
+				A8B43DF129C5B51400FADAF0 /* Views */,
+				A80AD39F29BF572400AE74F1 /* MDWriteNoteViewController.swift */,
+				A8B43DF029C5B4E100FADAF0 /* Manager */,
+			);
+			path = MDWirteDairyModule;
+			sourceTree = "<group>";
+		};
+		A8B43DF029C5B4E100FADAF0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF494C29D19C0F007BB6C7 /* MDFontManager.h */,
+				A8BF494D29D19C0F007BB6C7 /* MDFontManager.m */,
+				A8B43DD829C041B400FADAF0 /* MDCoreDataManager.swift */,
+				A8B43DDD29C1AEDE00FADAF0 /* MDContextManager.swift */,
+				A8BF495129D1B8AB007BB6C7 /* MDContextManager+Noti.swift */,
+				A8BF496D29D44E36007BB6C7 /* MDContextManager+Delegate.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		A8B43DF129C5B51400FADAF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A8B43DF229C5B55600FADAF0 /* MDDateAndWeatherView.swift */,
+				A8B43DF929C719B600FADAF0 /* MDWeatherPopUpView.swift */,
+				A8B43DF729C5DB0E00FADAF0 /* MDDatePopUpView.swift */,
+				A8B43DFB29C71AA500FADAF0 /* MDBasePopover.swift */,
+				A8B43DFF29C7207A00FADAF0 /* MDCollectionItemCell.swift */,
+				A8B43E0329C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift */,
+				A8B43E0529C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift */,
+				A8B43E0929C869D000FADAF0 /* MDWriteNoteSettingCell.swift */,
+				A8BF494F29D1B0A6007BB6C7 /* MDTextView.swift */,
+				A860EF1B29E6E48300F057B1 /* MDPicturesView.swift */,
+				A860EF1D29E6E82D00F057B1 /* MDPicturesViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED43E8D680E071CEC708E8FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C83D93AE5864692AF45E2E4 /* libPods-MyDairy.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +329,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A80AD39B29BF56FF00AE74F1 /* Build configuration list for PBXNativeTarget "MyDairy" */;
 			buildPhases = (
+				C35399E1360B28B5A0E8C4DD /* [CP] Check Pods Manifest.lock */,
+				5C8B95B4AB0F0CADA6B03BAB /* [CP] Prepare Artifacts */,
 				A80AD37B29BF56FD00AE74F1 /* Sources */,
 				A80AD37C29BF56FD00AE74F1 /* Frameworks */,
 				A80AD37D29BF56FD00AE74F1 /* Resources */,
+				7BFA7CCC0F9706C72B17CC07 /* [CP] Copy Pods Resources */,
+				F65D0685D5AD1DC319B7018C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -110,6 +357,7 @@
 				TargetAttributes = {
 					A80AD37E29BF56FD00AE74F1 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -136,47 +384,143 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A80AD39529BF56FF00AE74F1 /* LaunchScreen.storyboard in Resources */,
 				A80AD39229BF56FF00AE74F1 /* Assets.xcassets in Resources */,
-				A80AD38D29BF56FD00AE74F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C8B95B4AB0F0CADA6B03BAB /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDairy/Pods-MyDairy-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDairy/Pods-MyDairy-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyDairy/Pods-MyDairy-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BFA7CCC0F9706C72B17CC07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDairy/Pods-MyDairy-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDairy/Pods-MyDairy-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyDairy/Pods-MyDairy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C35399E1360B28B5A0E8C4DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyDairy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F65D0685D5AD1DC319B7018C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDairy/Pods-MyDairy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDairy/Pods-MyDairy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyDairy/Pods-MyDairy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A80AD37B29BF56FD00AE74F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8BF495029D1B0A6007BB6C7 /* MDTextView.swift in Sources */,
+				A860EF4629ED621600F057B1 /* MDPhotoWallDetailView.swift in Sources */,
+				A8BF496A29D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.m in Sources */,
+				A860EF1E29E6E82D00F057B1 /* MDPicturesViewCell.swift in Sources */,
+				A8B43DDE29C1AEDE00FADAF0 /* MDContextManager.swift in Sources */,
+				A8BF495529D1F997007BB6C7 /* MDTextInfoModelTransformer.m in Sources */,
+				A8B43E1529C9DF3100FADAF0 /* TestDownloadViewController.m in Sources */,
+				A860EF4429ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift in Sources */,
+				A8852A9429D55CB90013FB0B /* MDCustomNavBar.m in Sources */,
+				A860EF3C29EBE61200F057B1 /* MDPersonalCenterItemCell.swift in Sources */,
 				A80AD39829BF56FF00AE74F1 /* main.m in Sources */,
-				A80AD38A29BF56FD00AE74F1 /* ViewController.m in Sources */,
-				A80AD38429BF56FD00AE74F1 /* AppDelegate.m in Sources */,
-				A80AD38729BF56FD00AE74F1 /* SceneDelegate.m in Sources */,
+				A8B43E1229C9720E00FADAF0 /* MDKeys.swift in Sources */,
+				A8B43DD929C041B400FADAF0 /* MDCoreDataManager.swift in Sources */,
+				A8B43E0029C7207A00FADAF0 /* MDCollectionItemCell.swift in Sources */,
+				A8BF497129D45338007BB6C7 /* MDBaseFuncHelper.m in Sources */,
+				A860EF3E29EBEA1800F057B1 /* MDPersonalCenterSettingItemModel.swift in Sources */,
+				A8B43E0429C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift in Sources */,
+				A8BF496929D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.m in Sources */,
+				A80AD3AE29BF578400AE74F1 /* MDHomeViewController.m in Sources */,
+				A8BF494E29D19C0F007BB6C7 /* MDFontManager.m in Sources */,
+				A8B43DF629C5C8DC00FADAF0 /* MDConstant.swift in Sources */,
+				A8852A9129D55BF30013FB0B /* UIViewController+MDCustomNavBar.m in Sources */,
+				A8B43DFA29C719B600FADAF0 /* MDWeatherPopUpView.swift in Sources */,
+				A860EF1C29E6E48300F057B1 /* MDPicturesView.swift in Sources */,
+				A8B43E0A29C869D000FADAF0 /* MDWriteNoteSettingCell.swift in Sources */,
+				A80AD3AD29BF578400AE74F1 /* MDHomeTableViewCell.m in Sources */,
+				A8B43DF329C5B55600FADAF0 /* MDDateAndWeatherView.swift in Sources */,
+				A8B43DF829C5DB0E00FADAF0 /* MDDatePopUpView.swift in Sources */,
+				A8B43E1029C96DB700FADAF0 /* UIButton+Action.swift in Sources */,
+				A860EF4229ED291F00F057B1 /* MDPhotoWallCell.swift in Sources */,
+				A860EF4829ED631000F057B1 /* MDPhotoDetailViewCell.swift in Sources */,
+				A8BF495229D1B8AB007BB6C7 /* MDContextManager+Noti.swift in Sources */,
+				A8B43E0E29C8889000FADAF0 /* UIColor+MDColorHelper.m in Sources */,
+				A8B43E0629C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift in Sources */,
+				A860EF3A29EBE0A000F057B1 /* MDPersonalCenterViewController.swift in Sources */,
+				A8B43DFC29C71AA500FADAF0 /* MDBasePopover.swift in Sources */,
+				A860EF4A29EE689E00F057B1 /* MDDetailViewFlowLayout.swift in Sources */,
+				A8B43DE729C32C8900FADAF0 /* MDSettingViewController.m in Sources */,
+				A8BF496E29D44E36007BB6C7 /* MDContextManager+Delegate.swift in Sources */,
+				A80AD3B129BF578400AE74F1 /* AppDelegate.m in Sources */,
+				A860EF4029EC44AA00F057B1 /* MDPhotoWallViewController.swift in Sources */,
+				A80AD3A029BF572400AE74F1 /* MDWriteNoteViewController.swift in Sources */,
+				A80AD3AF29BF578400AE74F1 /* MDBaseViewController.m in Sources */,
+				A80AD3B229BF578400AE74F1 /* MDHomeViewModel.m in Sources */,
 				A80AD39029BF56FD00AE74F1 /* MyDairy.xcdatamodeld in Sources */,
+				A8BF495829D1FFD5007BB6C7 /* MDTextInfoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A80AD38B29BF56FD00AE74F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A80AD38C29BF56FD00AE74F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A80AD39329BF56FF00AE74F1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A80AD39429BF56FF00AE74F1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A80AD39929BF56FF00AE74F1 /* Debug */ = {
@@ -291,10 +635,14 @@
 		};
 		A80AD39C29BF56FF00AE74F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06C1F25BF12DE995E781E500 /* Pods-MyDairy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UP8W5A8CQC;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MyDairy/MDPrefixHeader.pch";
 				INFOPLIST_FILE = MyDairy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,16 +650,23 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wang.t.MyDairy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyDairy/MyDairy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		A80AD39D29BF56FF00AE74F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75F672E4504BBB2E0FFE8DC4 /* Pods-MyDairy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UP8W5A8CQC;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MyDairy/MDPrefixHeader.pch";
 				INFOPLIST_FILE = MyDairy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -319,6 +674,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wang.t.MyDairy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyDairy/MyDairy-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

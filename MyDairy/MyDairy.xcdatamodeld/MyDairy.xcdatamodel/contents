@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="MDDairyCommonModel" representedClassName="MDDairyCommonModel" syncable="YES">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="draft" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="finished" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="mood" optional="YES" attributeType="String"/>
+        <attribute name="orderNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="textInfo" optional="YES" attributeType="Transformable" valueTransformerName="MDTextInfoModelTransformer" customClassName="MDTextInfoModel"/>
+        <attribute name="weather" optional="YES" attributeType="String"/>
+    </entity>
 </model>

@@ -1,0 +1,73 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
+  - QWeather-SDK (4.10):
+    - AFNetworking (~> 4.0.1)
+  - ReactiveCocoa (10.3.0):
+    - ReactiveSwift (~> 6.2)
+  - ReactiveSwift (6.7.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SnapKit (5.6.0)
+  - SVProgressHUD (2.2.5)
+  - Then (3.0.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 4.0)
+  - Masonry
+  - QWeather-SDK
+  - ReactiveCocoa (~> 10.1)
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
+  - SnapKit (~> 5.0)
+  - SVProgressHUD
+  - Then
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Masonry
+    - QWeather-SDK
+    - ReactiveCocoa
+    - ReactiveSwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SVProgressHUD
+    - Then
+
+SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  QWeather-SDK: 20ef99647726903bb1583ceedee1d418176cedd4
+  ReactiveCocoa: 083ae559e6f588ce519cab412ea119b431c26a24
+  ReactiveSwift: 208201d6ecc9734196d147aa76bc1f24b1b821fe
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+
+PODFILE CHECKSUM: 58bca345f3a3c65eb4e81711da92d2a7f4867408
+
+COCOAPODS: 1.9.3
