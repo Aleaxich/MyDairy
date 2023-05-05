@@ -8,6 +8,8 @@
 
 #import "MDTextInfoModelTransformer.h"
 #import "MDTextInfoModel.h"
+#import "MyDairy-Swift.h"
+
 
 @implementation MDTextInfoModelTransformer
 
@@ -24,6 +26,7 @@
 }
 
 - (id)reverseTransformedValue:(id)value {
-    return [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithArray:@[MDTextInfoModel.class,NSString.class,NSMutableArray.class,NSData.class]] fromData:value error:nil];
+   return [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithArray:@[MDTextInfoModel.class,NSString.class,NSMutableArray.class,NSData.class,NSArray.class]] fromData:value error:nil];
+   
 }
 @end

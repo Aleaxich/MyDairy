@@ -10,6 +10,7 @@ target 'MyDairy' do
  pod 'ReactiveCocoa', '~> 10.1'
  pod 'RxSwift', '6.5.0'
  pod 'RxCocoa', '6.5.0'
+ pod 'RxDataSources'
  pod 'Then'
  pod 'QWeather-SDK'
 

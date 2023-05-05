@@ -13,23 +13,24 @@ import UIKit
 
     var mdTextView:MDTextView
     var dateAndWeatherView:MDDateAndWeatherView
-    var settingPopover:MDWriteNoteSettingPopover
+//    var settingPopover:MDWriteNoteSettingPopover
 
     
     init(model:MDDairyCommonModel?) {
-        var realModel = MDCoreDataManager.shareInstance.getNewDairyModel()
+        var realModel:MDDairyCommonModel
         if model != nil {
             realModel = model!
             realModel.textInfo = model!.textInfo ?? MDTextInfoModel.init()
-            realModel.textInfo?.imageList = realModel.textInfo?.imageList ?? NSMutableArray()
+//            realModel.textInfo?.imageList = realModel.textInfo?.imageList ?? [NSData]()
         } else {
             realModel = MDCoreDataManager.shareInstance.getNewDairyModel()
             realModel.textInfo = MDTextInfoModel.init()
-            realModel.textInfo?.imageList = NSMutableArray()
+//            realModel.textInfo?.imageList = [NSData]()
         }
+        realModel.textInfo?.kvo()
         mdTextView = MDTextView.init(frame: .zero, model: realModel)
         self.dateAndWeatherView = MDDateAndWeatherView(model: realModel)
-        self.settingPopover = MDWriteNoteSettingPopover.init(mdtextview: mdTextView, frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH_SWIFT, height: SCREENH_HEIGHT_SWIFT))
+//        self.settingPopover = MDWriteNoteSettingPopover.init(model: realModel.textInfo!)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -59,7 +60,7 @@ import UIKit
         }
         self.setNavRightButtonTitle("", with: UIImage.init(named: "icon_nav_bar_setting")!) {
             self.mdTextView.stopEditing()
-            self.settingPopover.show()
+            self.mdTextView.show()
         }
         
         

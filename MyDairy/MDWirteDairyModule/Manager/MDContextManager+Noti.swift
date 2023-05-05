@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+ textview <-> model <-> setting 界面
+ */
+
 extension MDContextManager {
 
     func setupNoti() {
@@ -30,7 +34,7 @@ extension MDContextManager {
             .subscribe{ value in
                 self.saved = false
              }
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
         self.rx
             .observeWeakly(Date.self, "model.createdDate")
@@ -38,7 +42,7 @@ extension MDContextManager {
             .subscribe{ value in
                 self.saved = false
              }
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
     }
     
     
@@ -46,7 +50,7 @@ extension MDContextManager {
             let userInfo = noti.userInfo
         if let alignInfo = userInfo?["userInfo"] {
             self.textView.textAlignment = alignInfo as! NSTextAlignment
-            model.textInfo?.mdTextAligment = alignInfo as! NSTextAlignment
+//            model.textInfo?.mdTextAligment = alignInfo as! NSTextAlignment
         }
         saved = false
     }
@@ -64,7 +68,7 @@ extension MDContextManager {
         if let fontName = noti.userInfo?["userInfo"] {
             textFontName = (fontName as? String)!
             self.textView.font = UIFont(name: textFontName, size: CGFloat(textFontSize))
-            model.textInfo?.mdFontName = textFontName
+//            model.textInfo?.mdFontName = textFontName
 
         }
         saved = false
@@ -74,7 +78,7 @@ extension MDContextManager {
         if let fontSize = noti.userInfo?["userInfo"] {
             textFontSize = (fontSize as? Int)!
             textView.font = UIFont(name: textFontName , size: CGFloat(textFontSize))
-            model.textInfo?.mdFontSize = textFontSize
+//            model.textInfo?.mdFontSize = textFontSize
 
         }
         saved = false
@@ -83,7 +87,7 @@ extension MDContextManager {
     @objc func fontBoldSettingChanged(noti:NSNotification) {
         if let fontBold = noti.userInfo?["userInfo"] {
             self.textView.font = UIFont.systemFont(ofSize: CGFloat(textFontSize), weight: fontBold as! UIFont.Weight)
-            model.textInfo?.mdFontWeight = fontBold as! UIFont.Weight
+//            model.textInfo?.mdFontWeight = fontBold as! UIFont.Weight
 
         }
         saved = false

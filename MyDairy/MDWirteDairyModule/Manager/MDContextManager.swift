@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 // MARK: 文档管理类
 /*
@@ -35,7 +36,16 @@ import RxSwift
     var saved = true
     var insertPicAction:((_ imageDataList:[NSData])->())?
     var caretChange:(()->())?
-    var disposeBag = DisposeBag()
+    var bag = DisposeBag()
+    
+    lazy var alignmentOB = PublishSubject<NSTextAlignment>()
+    
+    lazy var colorOB = PublishSubject<String>()
+    
+    lazy var fontSizeOB = PublishSubject<CGFloat>()
+    
+    lazy var boldOB = PublishSubject<UIFont.Weight>()
+    
     
       init(model:MDDairyCommonModel) {
         coreDataManager = MDCoreDataManager.shareInstance
@@ -47,20 +57,13 @@ import RxSwift
     
     /// 解析模型
     func decodeModel() {
+        
         textView.text = model.text
-        let color = (model.textInfo?.mdTextColorHexString ?? "#000000") as String
-        textView.textColor = UIColor(hexString: color)
-        textView.textAlignment = model.textInfo?.mdTextAligment ?? .left
-        let fontName = model.textInfo?.mdFontName ?? textFontName
-        let fontSize = model.textInfo?.mdFontSize ?? textFontSize
-        textView.font = UIFont.init(name: fontName, size: CGFloat(fontSize))
-        // 加粗的逻辑待确认
-        let fontWeight = model.textInfo?.mdFontWeight ?? UIFont.Weight.regular
-        textView.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: fontWeight)
-        // 如果解析出图片
-        if model.textInfo?.imageList.count != 0 {
-            imageList = model.textInfo?.imageList as? [NSData]
-        }
+ 
+    // 如果解析出图片
+//        if model.textInfo?.imageList.count != 0 {
+//            imageList = model.textInfo?.imageList as? [NSData]
+//        }
     }
     
     
@@ -127,16 +130,18 @@ import RxSwift
     
     //增加图片
     func insertPictureToTextView(image:UIImage) {
-        guard  model.textInfo?.imageList.count ?? 0 < 9 else {
-            SVProgressHUD.showError(withStatus: "多添加 9 张照片")
-            SVProgressHUD.dismiss(withDelay: 0.5)
-            return
-        }
+//        guard  model.textInfo?.imageList.count ?? 0 < 9 else {
+//            SVProgressHUD.showError(withStatus: "多添加 9 张照片")
+//            SVProgressHUD.dismiss(withDelay: 0.5)
+//            return
+//        }
         
-        model.textInfo?.imageList.add(image.pngData() as Any)
+//        model.textInfo?.imageList.add(image.pngData() as Any)
+//        model.textInfo?.imageList.append(image.pngData()! as NSData)
+
         saved = false
         guard let insertPic = insertPicAction else { return }
-        insertPic(model.textInfo?.imageList as! [NSData])
+//        insertPic(model.textInfo?.imageList as! [NSData])
     }
     
 
@@ -147,6 +152,102 @@ import RxSwift
     
     deinit {
         
+    }
+}
+
+
+
+extension MDContextManager {
+    
+    /// 输入序列
+   public struct input {
+       let setupSubview: Driver<Void>
+        let alignmentButtonTap: Driver<Int>
+        let colorButtonTap: Driver<String>
+        let sizeButtonTap: Driver<CGFloat>
+        let boldButtonTap: Driver<String>
+        let insertButtonTap: Driver<Void>
+    }
+    
+    /// 输出序列
+    public struct output {
+        let datasource:Driver<[MDWriteNoteSettingPopover.CellSectionModel]>
+        let aligmentDriver:Driver<NSTextAlignment>
+        let colorDriver:Driver<String>
+        let fontDriver:Driver<CGFloat>
+        let boldDriver:Driver<String>
+    }
+    
+    
+     
+    /// 完成序列转换
+    func transform(input:input) -> Driver<[MDWriteNoteSettingPopover.CellSectionModel]> {
+        
+        let setup = input.setupSubview.flatMapLatest {[weak self] _ in
+            self!.setup()
+                .asDriver(onErrorJustReturn: [])
+        }
+        
+        let alignTap = input.alignmentButtonTap
+            .flatMapLatest { [weak self] alignment in
+                self!.changeAlignment(alignment: alignment)
+                    .asDriver(onErrorJustReturn: [])
+            }
+        
+        let colorTap = input.colorButtonTap
+            .flatMapLatest { [weak self] color in
+                self!.changeColor(color: color)
+                    .asDriver(onErrorJustReturn: [])
+            }
+        
+        let changeSize = input.sizeButtonTap
+            .flatMapLatest { [weak self] size in
+                self!.changeSize(size: size)
+                    .asDriver(onErrorJustReturn: [])
+            }
+        
+        let changeBold = input.boldButtonTap
+            .flatMapLatest { [weak self] bold in
+                self!.changeBold(bold: bold)
+                    .asDriver(onErrorJustReturn: [])
+            }
+        
+        return Driver.merge(setup,alignTap,colorTap,changeSize,changeBold)
+        
+
+        
+    }
+    
+    func setup() -> Single<[MDWriteNoteSettingPopover.CellSectionModel]> {
+        return Single.just(createModels())
+    }
+    
+    
+    func changeAlignment(alignment:Int) -> Single<[MDWriteNoteSettingPopover.CellSectionModel]> {
+        model.textInfo?.mdTextAligment = alignment
+        return Single.just(createModels())
+    }
+    
+    func changeColor(color:String) -> Single<[MDWriteNoteSettingPopover.CellSectionModel]> {
+        model.textInfo?.mdTextColorHexString = color
+        return Single.just(createModels())
+    }
+    
+    func changeSize(size:CGFloat) -> Single<[MDWriteNoteSettingPopover.CellSectionModel]> {
+        model.textInfo?.mdFontSize = Int(size)
+        fontSizeOB.onNext(size)
+        return Single.just(createModels())
+    }
+    
+    func changeBold(bold:String) -> Single<[MDWriteNoteSettingPopover.CellSectionModel]> {
+        model.textInfo?.mdFontWeight = bold
+        return Single.just(createModels())
+
+    }
+    
+    func createModels() -> [MDWriteNoteSettingPopover.CellSectionModel] {
+        let model = MDSettingInfoModel(alignment: model.textInfo?.mdTextAligment ?? 0, color: model.textInfo?.mdTextColorHexString ?? "#696969", bold: model.textInfo?.mdFontWeight ?? ".regular", size: CGFloat(model.textInfo?.mdFontSize ?? 20))
+        return [MDWriteNoteSettingPopover.CellSectionModel(items: [model,model,model,model])]
     }
 }
 

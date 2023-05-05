@@ -10,7 +10,7 @@ import Foundation
 import Then
 
 struct imageData {
-    var imageList:[NSData]
+//    var imageList:[NSData]
     var date:String
     var orderNum:Int32
 }
@@ -59,14 +59,14 @@ class MDPhotoWallViewController : UIViewController {
     
     func loadData() {
         let models = coreDataManager.getCoreData()
-        models?.forEach({
-            guard let imageList = $0.textInfo?.imageList else { return }
-            if imageList.count != 0 {
-                let dateFormer = DateFormatter()
-                dateFormer.dateFormat = "yyyy.MM.dd"
-                imageDataList.append(imageData(imageList: imageList as! [NSData], date: dateFormer.string(from: $0.createdDate!), orderNum: $0.orderNum))
-            }
-        })
+//        models?.forEach({
+//            guard let imageList = $0.textInfo?.imageList else { return }
+//            if imageList.count != 0 {
+//                let dateFormer = DateFormatter()
+//                dateFormer.dateFormat = "yyyy.MM.dd"
+//                imageDataList.append(imageData(imageList: imageList as! [NSData], date: dateFormer.string(from: $0.createdDate!), orderNum: $0.orderNum))
+//            }
+//        })
         collectionView.reloadData()
     }
 }
@@ -78,13 +78,14 @@ extension MDPhotoWallViewController:UICollectionViewDelegate,UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        imageDataList[section].imageList.count
+//        imageDataList[section].imageList.count
+        0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(MDPhotoWallCell.self), for: indexPath) as! MDPhotoWallCell
-        let list = imageDataList[indexPath.section].imageList
-        cell.loadData(imageData: list[indexPath.row])
+//        let list = imageDataList[indexPath.section].imageList
+//        cell.loadData(imageData: list[indexPath.row])
         return cell
     }
     
@@ -102,19 +103,19 @@ extension MDPhotoWallViewController:UICollectionViewDelegate,UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let view = MDPhotoWallDetailView.init(imageList: imageDataList[indexPath.section].imageList,selectedIndexPath: indexPath)
-        view.imageListChanged = {[weak self] imageList in
-            let data = self?.imageDataList[indexPath.section]
-            let orderNum = data?.orderNum
-            let model = self?.coreDataManager.getDataWithOrderNum(orderNum)
-            let mutableArray = NSMutableArray()
-            imageList?.forEach {
-                mutableArray.add($0)
-            }
-            model?.textInfo?.imageList = mutableArray
-            self?.coreDataManager.changeDataWithModel(model: model!)
-        }
-        view.show()
+//        let view = MDPhotoWallDetailView.init(imageList: imageDataList[indexPath.section].imageList,selectedIndexPath: indexPath)
+//        view.imageListChanged = {[weak self] imageList in
+//            let data = self?.imageDataList[indexPath.section]
+//            let orderNum = data?.orderNum
+//            let model = self?.coreDataManager.getDataWithOrderNum(orderNum)
+//            var mutableArray = [NSData]()
+//            imageList?.forEach {
+//                mutableArray.append($0)
+//            }
+//            model?.textInfo?.imageList = mutableArray
+//            self?.coreDataManager.changeDataWithModel(model: model!)
+//        }
+//        view.show()
         
     }
 }

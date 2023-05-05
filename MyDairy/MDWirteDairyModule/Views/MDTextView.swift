@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Then
 import RxSwift
+import RxCocoa
 
 class MDTextView:UIView {
     var contextManager:MDContextManager
@@ -35,7 +36,12 @@ class MDTextView:UIView {
     /// 图集
     lazy var picCollectionView:MDPicturesView = MDPicturesView(frame: .zero)
     
+    /// 弹窗
+    var settingPopover:MDWriteNoteSettingPopover
+
+    var fontSize:CGFloat = 20
     
+    var infoModel:MDTextInfoModel
     
     lazy var backGroundView = UIScrollView().then{
         $0.backgroundColor = .white
@@ -43,8 +49,11 @@ class MDTextView:UIView {
         $0.contentSize = CGSizeMake(SCREEN_WIDTH_SWIFT, self.frame.size.height)
     }
     
+    
     init(frame:CGRect, model:MDDairyCommonModel) {
-        self.contextManager = MDContextManager.init(model: model)
+        infoModel = model.textInfo!
+        contextManager = MDContextManager.init(model: model)
+        settingPopover = MDWriteNoteSettingPopover(contextManager: contextManager)
         super.init(frame: frame)
         contextManager.textView = textView
         textView.delegate = self.contextManager
@@ -100,6 +109,42 @@ class MDTextView:UIView {
             make.edges.equalTo(self)
         }
         
+        infoModel.kvo()
+        infoModel.alignmentSubject.asDriver(onErrorJustReturn: -1)
+            .map {
+                if $0 == -1 || $0 == 0 {
+                    return NSTextAlignment.left
+                } else if $0 == 1 {
+                    return NSTextAlignment.center
+                } else {
+                    return NSTextAlignment.right
+                }
+            }.drive(textView.rx.textAlignment)
+            .disposed(by: bag)
+        
+        infoModel.colorSubject.asDriver(onErrorJustReturn: "")
+            .map { UIColor(hexString: $0) }
+            .drive(textView.rx.textColor)
+            .disposed(by: bag)
+        
+        infoModel.fontSizeSubject.asDriver(onErrorJustReturn: 20)
+            .map {[weak self] in
+                self?.fontSize = $0
+                return UIFont(name: ".SFUI-Regular", size: $0)
+            }
+            .drive(textView.rx.font)
+            .disposed(by: bag)
+
+        infoModel.fontWeigthSubject.asDriver(onErrorJustReturn: "")
+            .map {
+                if $0 == "bold" {
+                    return UIFont.systemFont(ofSize: self.fontSize, weight: UIFont.Weight.bold)
+                } else {
+                    return UIFont.systemFont(ofSize: self.fontSize, weight: UIFont.Weight.regular)
+                }
+            }.drive(textView.rx.font)
+            .disposed(by: bag)
+        
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 375, height: 35))
         let item = UIBarButtonItem(title: "完成", style: .done, target: self, action: #selector(dismissKeyboard))
         toolbar.setItems([item], animated: false)
@@ -128,7 +173,7 @@ class MDTextView:UIView {
     }
     
     func caretChange() {
-        var sltRange = textView.selectedTextRange!
+        let sltRange = textView.selectedTextRange!
         let pos = textView.position(within: sltRange, farthestIn: .down)
         var caretRect = textView.caretRect(for: pos!)
         caretRect = textView.convert(caretRect, to: backGroundView)
@@ -183,6 +228,15 @@ class MDTextView:UIView {
     func stopEditing(){
         textView.endEditing(true)
     }
+    
+    func show(){
+        settingPopover.show()
+    }
         
+}
+
+extension MDTextView {
+//    public var rx
+    
 }
 

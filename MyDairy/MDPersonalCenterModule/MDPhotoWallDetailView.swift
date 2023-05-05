@@ -31,8 +31,8 @@ class MDPhotoWallDetailView : MDBasePopover {
                 self?.collectionView.performBatchUpdates({
                     self?.imageDataList.remove(at: realItem.item)
                     self?.collectionView.deleteItems(at: [realItem])
-                    guard let changedAction = self?.imageListChanged else { return }
-                    changedAction(self?.imageDataList)
+//                    guard let changedAction = self?.imageListChanged else { return }
+//                    changedAction(self?.imageDataList)
                 }, completion: {_ in
                     self?.collectionView.reloadData()
                 })
@@ -74,7 +74,7 @@ class MDPhotoWallDetailView : MDBasePopover {
     init(imageList:[NSData],selectedIndexPath:IndexPath) {
         currentIndexPath = NSIndexPath(item: selectedIndexPath.item, section: 0) as IndexPath
         super.init()
-        imageDataList = imageList
+//        imageDataList = imageList
         setupSubviews()
     }
     

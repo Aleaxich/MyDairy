@@ -9,12 +9,19 @@
 import Foundation
 
 class MDWriteNoteSettingViewModel {
-    var settingItemList:[MDWriteNoteSettingItemType]
-    //内部持有 textview
-    init(textView:UITextView) {
-        settingItemList = [.MDWriteNoteSettingItemAlign,.MDWriteNoteSettingItemFontSize,.MDWriteNoteSettingItemFontWeight,.MDWriteNoteSettingItemFontColor,.MDWriteNoteSettingItemInsertPic]
-//        setupNoti()
+//    var settingItemList:[MDWriteNoteSettingItemType]
+    
+    
+    init (model:MDTextInfoModel) {
+        
     }
+    
+    
+    
+//    init(textView:UITextView) {
+//        settingItemList = [.MDWriteNoteSettingItemAlign,.MDWriteNoteSettingItemFontSize,.MDWriteNoteSettingItemFontWeight,.MDWriteNoteSettingItemFontColor,.MDWriteNoteSettingItemInsertPic]
+////        setupNoti()
+//    }
     
 
     
