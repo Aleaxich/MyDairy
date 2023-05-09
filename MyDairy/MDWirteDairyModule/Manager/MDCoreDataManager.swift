@@ -44,7 +44,7 @@ import Then
     
 
     // MARK: 增加
-    func addCoreDataWithModel(dairyModel:MDDairyCommonModel)  {
+    func addCoreDataWithModel(dairyModel:MDDairyCommonModel){
         let context = self.getContext()
         guard dairyModel.orderNum != 0  else {return}
         context.insert(dairyModel)
@@ -70,7 +70,11 @@ import Then
                 do {
                     arr = try context.fetch(request)
                     // 过滤无效数据
-                    return arr.filter{$0.orderNum != 0}
+                    let resArray = arr.filter{$0.orderNum != 0}
+                    DispatchQueue.global().async {
+                        MDStatisticsHelper.sharedInstance.calculate(models:resArray)
+                    }
+                    return resArray
                 } catch  {
                     print("读取数据失败")
                     return nil
@@ -136,13 +140,8 @@ import Then
                 $0.createdDate = model.createdDate
                 $0.weather = model.weather
                 $0.mood = model.mood
+                $0.imageList = model.imageList
             }
-//            preModel.text = model.text
-//            preModel.image = model.image
-//            preModel.textInfo = model.textInfo
-//            preModel.createdDate = model.createdDate
-//            preModel.weather = model.weather
-//            preModel.mood = model.mood
             try context.save()
             SVProgressHUD.showSuccess(withStatus: "保存成功")
             SVProgressHUD.dismiss(withDelay: 0.5)

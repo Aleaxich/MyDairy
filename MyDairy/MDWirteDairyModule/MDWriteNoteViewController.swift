@@ -13,24 +13,23 @@ import UIKit
 
     var mdTextView:MDTextView
     var dateAndWeatherView:MDDateAndWeatherView
-//    var settingPopover:MDWriteNoteSettingPopover
 
     
     init(model:MDDairyCommonModel?) {
         var realModel:MDDairyCommonModel
+        let datas:[NSData] = []
         if model != nil {
             realModel = model!
             realModel.textInfo = model!.textInfo ?? MDTextInfoModel.init()
-//            realModel.textInfo?.imageList = realModel.textInfo?.imageList ?? [NSData]()
+            realModel.imageList = model!.imageList ?? NSMutableArray(array: datas)
         } else {
             realModel = MDCoreDataManager.shareInstance.getNewDairyModel()
             realModel.textInfo = MDTextInfoModel.init()
-//            realModel.textInfo?.imageList = [NSData]()
+            realModel.imageList = NSMutableArray(array: datas)
         }
         realModel.textInfo?.kvo()
         mdTextView = MDTextView.init(frame: .zero, model: realModel)
         self.dateAndWeatherView = MDDateAndWeatherView(model: realModel)
-//        self.settingPopover = MDWriteNoteSettingPopover.init(model: realModel.textInfo!)
         super.init(nibName: nil, bundle: nil)
     }
 

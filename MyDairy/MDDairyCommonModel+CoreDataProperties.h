@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *text;
 @property (nullable, nonatomic, copy) NSString *weather;
 @property (nullable, nonatomic, retain) MDTextInfoModel *textInfo;
+@property (nullable, nonatomic, retain) NSMutableArray<NSData *> *imageList;
 /// 日记创建日期
 @property (nullable, nonatomic, copy) NSDate *createdDate;
 

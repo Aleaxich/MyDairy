@@ -11,6 +11,8 @@ import Foundation
 struct MDPersonalCenterSettingItemModel {
     /// 标题
     var title:String
+    /// 图片名称
+    var image:String
     /// 点击动作
     var selectedAction:() -> ()
 }

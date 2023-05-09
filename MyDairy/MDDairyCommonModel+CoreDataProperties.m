@@ -8,7 +8,6 @@
 //
 
 #import "MDDairyCommonModel+CoreDataProperties.h"
-#import "MDTextInfoModel.h"
 
 @implementation MDDairyCommonModel (CoreDataProperties)
 
@@ -26,5 +25,6 @@
 @dynamic weather;
 @dynamic textInfo;
 @dynamic createdDate;
+@dynamic imageList;
 
 @end

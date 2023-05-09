@@ -11,24 +11,21 @@ import Then
 import RxCocoa
 import RxSwift
 
-
-
-
 public class MDTextSettingButton: UIButton {
     var alignmentInfo:Int = 0
     var colorInfo:String = ""
     var sizeInfo:CGFloat = 0
     var weightInfo:String = ""
-    var showBoarder = false
+    var changeBackGroundColorWhenSelected = false
     
     public override var isSelected: Bool {
         didSet {
-            if isSelected && showBoarder {
-                self.layer.borderColor = UIColor(hexString: "#FFF0F5").cgColor
-                self.layer.borderWidth = 2
+            if isSelected && changeBackGroundColorWhenSelected {
+                self.backgroundColor = UIColor(hexString: "#FFB6C1")
             } else {
-                self.layer.borderColor = UIColor.clear.cgColor
-                self.layer.borderWidth = 0
+                if self.backgroundColor == UIColor(hexString: "#FFB6C1") {
+                    self.backgroundColor = UIColor(hexString: "#F5F5F5")
+                }
             }
         }
     }
@@ -44,8 +41,6 @@ public class MDTextSettingButton: UIButton {
                     self.layer.borderWidth = 0
                 }
             })
-        
-           
     }
     
 }
@@ -81,6 +76,10 @@ public class MDTextAlignSettingCell: UITableViewCell {
         $0.alignmentInfo = 2
     }
     
+    lazy var crossLine = UIView().then {
+        $0.backgroundColor = .gray
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSubviews()
@@ -98,6 +97,7 @@ public class MDTextAlignSettingCell: UITableViewCell {
     }
     
     func setupSubviews() {
+        backgroundColor = UIColor(hexString: "#F5F5F5")
         self.contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (maker) in
             maker.left.equalToSuperview().offset(10)
@@ -107,7 +107,7 @@ public class MDTextAlignSettingCell: UITableViewCell {
         let stackView = UIStackView.init()
               stackView.axis = .horizontal
               stackView.alignment = .fill
-              stackView.spacing = 10
+              stackView.spacing = 50
               stackView.distribution = .fillEqually
               stackView.addArrangedSubview(button1)
               stackView.addArrangedSubview(button2)
@@ -117,11 +117,18 @@ public class MDTextAlignSettingCell: UITableViewCell {
         stackView.snp.makeConstraints { (maker) in
             maker.left.equalTo(titleLabel.snp_rightMargin).offset(10)
             maker.centerY.equalToSuperview()
-            maker.size.equalTo(CGSize(width: 300, height: 50))
+            maker.size.equalTo(CGSize(width: 300, height: 40))
+        }
+        
+        contentView.addSubview(crossLine)
+        crossLine.snp.makeConstraints { make in
+            make.height.equalTo(0.5)
+            make.centerX.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(25)
+            make.right.equalToSuperview().offset(-25)
+            
         }
     }
-    
-
     
     func setupKVO() {
         let buttons = [button1,button2,button3]
@@ -148,11 +155,3 @@ public class MDTextAlignSettingCell: UITableViewCell {
 
 }
 
-
-//extension Reactive where Base:MDTextSettingButton {
-//    public var alignInfo:Binder<NSTextAlignment> {
-//        return Binder(self.base) { button,alignment in
-//            button.alignmentInfo = alignment
-//        }
-//    }
-//}

@@ -31,8 +31,8 @@ class MDPhotoWallDetailView : MDBasePopover {
                 self?.collectionView.performBatchUpdates({
                     self?.imageDataList.remove(at: realItem.item)
                     self?.collectionView.deleteItems(at: [realItem])
-//                    guard let changedAction = self?.imageListChanged else { return }
-//                    changedAction(self?.imageDataList)
+                    guard let changedAction = self?.imageListChanged else { return }
+                    changedAction(self?.imageDataList)
                 }, completion: {_ in
                     self?.collectionView.reloadData()
                 })
@@ -58,7 +58,6 @@ class MDPhotoWallDetailView : MDBasePopover {
         $0.font = UIFont.systemFont(ofSize: 20)
     }
     lazy var collectionView =  {
-
         let layout = MDDetailViewFlowLayout.init()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .black
@@ -74,7 +73,7 @@ class MDPhotoWallDetailView : MDBasePopover {
     init(imageList:[NSData],selectedIndexPath:IndexPath) {
         currentIndexPath = NSIndexPath(item: selectedIndexPath.item, section: 0) as IndexPath
         super.init()
-//        imageDataList = imageList
+        imageDataList = imageList
         setupSubviews()
     }
     
@@ -113,14 +112,13 @@ class MDPhotoWallDetailView : MDBasePopover {
         }
         
         collectionView.reloadData()
-        /// reloadData 异步
+        // reloadData 异步
         self.layoutIfNeeded()
         collectionView.scrollToItem(at: currentIndexPath, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
     }
     
 
   @objc func saveError(image: UIImage, didFinishSavingWithError: NSError?, contextInfo: AnyObject) {
-
         if didFinishSavingWithError != nil {
             SVProgressHUD.showError(withStatus: "保存失败")
             SVProgressHUD.dismiss(withDelay: 0.5)

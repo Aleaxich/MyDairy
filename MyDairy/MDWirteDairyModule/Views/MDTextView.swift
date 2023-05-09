@@ -184,27 +184,9 @@ class MDTextView:UIView {
         }
     }
     
-    /// 计算图片尺寸
-    func calculatePicViewSize(image:UIImage) -> CGSize {
-        if image.size.width < picViewDefualtWidth && image.size.height < picViewDefualtHeight {
-            return CGSize(width:picViewDefualtWidth , height: picViewDefualtHeight)
-        } else if image.size.width > picViewDefualtWidth && image.size.height > picViewDefualtHeight {
-            let scale:CGFloat = image.size.width / image.size.height
-            if image.size.width > image.size.height {
-                let height:CGFloat = picViewDefualtWidth / scale
-                return CGSize(width: picViewDefualtWidth, height: height)
-            } else if image.size.width < image.size.height {
-                let width = picViewDefualtHeight * scale
-                return CGSize(width: width, height: picViewDefualtHeight)
-            }
-        }
-        return CGSize(width: picViewDefualtWidth, height: picViewDefualtHeight)
-    }
-    
     @objc func dismissKeyboard() {
         textView.resignFirstResponder()
     }
-    
     
     func textViewWillExit(){
         contextManager.textViewWillExit()
@@ -214,7 +196,6 @@ class MDTextView:UIView {
     func saveContext() {
         contextManager.saveContext()
     }
-        
         
     func CleanContext() {
         contextManager.CleanContext()
@@ -233,10 +214,5 @@ class MDTextView:UIView {
         settingPopover.show()
     }
         
-}
-
-extension MDTextView {
-//    public var rx
-    
 }
 

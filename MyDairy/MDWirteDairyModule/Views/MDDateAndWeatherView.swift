@@ -14,17 +14,25 @@ import Then
 
 @objcMembers class MDDateAndWeatherView:UIView {
     // 日期标题
-    var dateLabel:UILabel = UILabel.init()
+    var dateLabel:UILabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 16)
+    }
+    
     var datePopover:MDDatePopUpView
+    
     var weatherPopover:MDWeatherPopUpView
-    // 天气图标
+    
+    /// 天气图标
     var weatherIconView:UIImageView
-    var weatherLabel:UILabel = UILabel.init()
+    
+    ///  天气标题
+    var weatherLabel:UILabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 16)
+    }
     var model:MDDairyCommonModel
     
      init(model:MDDairyCommonModel) {
          self.model = model
-        // 考虑优化
         datePopover = MDDatePopUpView.init(model: model)
         weatherPopover = MDWeatherPopUpView.init()
          
@@ -60,9 +68,10 @@ import Then
         model.createdDate = date
         let dateString = "Date：\(dateFormat.string(from: date))"
         dateLabel.text = dateString
-        dateLabel.isUserInteractionEnabled = true;
-        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(popDateView))
-        dateLabel.addGestureRecognizer(gesture)
+        //TODO: 暂时删除该功能
+//        dateLabel.isUserInteractionEnabled = true
+//        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(popDateView))
+//        dateLabel.addGestureRecognizer(gesture)
         self.addSubview(dateLabel)
         dateLabel.snp.makeConstraints { (maker) in
             maker.size.equalTo(CGSize(width: 200, height: 50))
@@ -101,6 +110,5 @@ import Then
     func popWeatherView() {
         weatherPopover.show()
     }
-    
     
 }

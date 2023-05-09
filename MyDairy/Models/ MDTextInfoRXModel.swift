@@ -29,21 +29,18 @@ import RxCocoa
             alignmentSubject.onNext(mdTextAligment)
         }
     }
-//
+
     var mdFontSize: Int {
         didSet {
             fontSizeSubject.onNext(CGFloat(mdFontSize))
         }
     }
-//
+
     var mdFontWeight:String {
         didSet {
             fontWeigthSubject.onNext(mdFontWeight)
         }
     }
-    
-
-//    var imageList:[NSData]
     
     var alignmentSubject = BehaviorSubject<Int>(value: -1)
 
@@ -58,16 +55,14 @@ import RxCocoa
         coder.encode(mdTextAligment, forKey: "mdTextAligment")
         coder.encode(mdFontSize, forKey: "mdFontSize")
         coder.encode(mdFontWeight, forKey: "mdFontWeight")
-//        coder.encode(imageList, forKey: "imageList")
     }
     
     /// 新模型
     override init() {
-        self.mdTextColorHexString = ""
+        self.mdTextColorHexString = "#000000"
         self.mdTextAligment = 0
         self.mdFontWeight = ""
         self.mdFontSize = 20
-//        self.imageList = [NSData]()
     }
     
     required public init?(coder: NSCoder) {
@@ -75,7 +70,6 @@ import RxCocoa
         self.mdTextAligment = coder.decodeInteger(forKey: "mdTextAligment")
         self.mdFontSize = coder.decodeInteger(forKey: "mdFontSize")
         self.mdFontWeight = (coder.decodeObject(of: NSString.self, forKey: "mdFontWeight") ?? "") as String
-//        self.imageList = (coder.decodeObject(of: NSMutableArray.self, forKey: "imageList") ?? []) as! [NSData]
     }
     
     public func kvo() {
@@ -84,13 +78,7 @@ import RxCocoa
         fontSizeSubject.onNext(CGFloat(self.mdFontSize))
         fontWeigthSubject.onNext(self.mdFontWeight)
     }
-    
-    
 }
-
-
-
-
 
 extension Reactive where Base:MDTextInfoModel {
     public var mdTextAligment:Binder<Int> {

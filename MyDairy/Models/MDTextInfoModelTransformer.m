@@ -7,7 +7,6 @@
 //
 
 #import "MDTextInfoModelTransformer.h"
-#import "MDTextInfoModel.h"
 #import "MyDairy-Swift.h"
 
 

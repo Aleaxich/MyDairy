@@ -10,10 +10,7 @@
 #import "Masonry.h"
 #import "MDDairyCommonModel+CoreDataClass.h"
 #import "UIColor+MDColorHelper.h"
-#import "MDTextInfoModel.h"
 #import "MyDairy-Swift.h"
-
-
 
 
 @interface MDHomeTableViewCell()
@@ -43,11 +40,11 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy.MM.dd";
     self.dateLabel.text = [formatter stringFromDate:model.createdDate];
-//    if (model.textInfo.imageList.count != 0) {
-//        self.pic.image = [UIImage imageWithData:model.textInfo.imageList[0]];
-//    } else {
-//        self.pic.image = nil;
-//    }
+    if (model.imageList.count != 0) {
+        self.pic.image = [UIImage imageWithData:model.imageList[0]];
+    } else {
+        self.pic.image = nil;
+    }
 }
 
 - (void)buildSubviews {

@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MDHomeViewController.h"
 #import "MyDairy-Swift.h"
-#import "MDSettingViewController.h"
 #import "SVProgressHUD.h"
 
 

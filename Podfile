@@ -13,6 +13,6 @@ target 'MyDairy' do
  pod 'RxDataSources'
  pod 'Then'
  pod 'QWeather-SDK'
-
-
+ pod 'AAChartKit'
+ pod 'AAInfographics'
 end

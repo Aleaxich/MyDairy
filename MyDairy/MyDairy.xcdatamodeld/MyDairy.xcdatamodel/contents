@@ -5,6 +5,7 @@
         <attribute name="draft" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="finished" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="imageList" optional="YES" attributeType="Transformable" valueTransformerName="MDImageListTransformer" customClassName="NSMutableArray"/>
         <attribute name="mood" optional="YES" attributeType="String"/>
         <attribute name="orderNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="text" optional="YES" attributeType="String"/>

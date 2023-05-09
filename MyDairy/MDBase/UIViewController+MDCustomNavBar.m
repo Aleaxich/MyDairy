@@ -49,6 +49,4 @@ const CGFloat MDCustomBarHeight = 100;
     [self.mdNavBar rightButtonTitle:title withImage:imgage withSelected:action];
 }
 
-
-
 @end

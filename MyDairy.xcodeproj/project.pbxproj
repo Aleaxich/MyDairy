@@ -27,7 +27,6 @@
 		A860EF4629ED621600F057B1 /* MDPhotoWallDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF4529ED621600F057B1 /* MDPhotoWallDetailView.swift */; };
 		A860EF4829ED631000F057B1 /* MDPhotoDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF4729ED631000F057B1 /* MDPhotoDetailViewCell.swift */; };
 		A860EF4A29EE689E00F057B1 /* MDDetailViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860EF4929EE689E00F057B1 /* MDDetailViewFlowLayout.swift */; };
-		A88120F529F3D20000677488 /* testRXSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88120F429F3D20000677488 /* testRXSwiftViewController.swift */; };
 		A88120F829F5702F00677488 /* MDTextAlignSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88120F729F5702F00677488 /* MDTextAlignSettingCell.swift */; };
 		A88120FA29F57BB000677488 /*  MDTextInfoRXModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88120F929F57BB000677488 /*  MDTextInfoRXModel.swift */; };
 		A88120FC29F6E70B00677488 /* MDSettingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88120FB29F6E70B00677488 /* MDSettingInfoModel.swift */; };
@@ -37,9 +36,12 @@
 		A88809912A0116350007A579 /* MDTextFontSizeSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88809902A0116350007A579 /* MDTextFontSizeSettingCell.swift */; };
 		A88809932A013C1C0007A579 /* RXSwift+MDDairy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88809922A013C1C0007A579 /* RXSwift+MDDairy.swift */; };
 		A88809952A04F9FC0007A579 /* MDTextFontWeightSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88809942A04F9FC0007A579 /* MDTextFontWeightSettingCell.swift */; };
+		A88809992A05136D0007A579 /* MDImageListTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88809982A05136D0007A579 /* MDImageListTransformer.swift */; };
+		A888099B2A052BBE0007A579 /* MDTextInsertImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888099A2A052BBE0007A579 /* MDTextInsertImageCell.swift */; };
+		A888099E2A0609A40007A579 /* MDStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888099D2A0609A40007A579 /* MDStatisticsViewController.swift */; };
+		A88809A02A0688A50007A579 /* MDStatisticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888099F2A0688A50007A579 /* MDStatisticsHelper.swift */; };
 		A8B43DD929C041B400FADAF0 /* MDCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DD829C041B400FADAF0 /* MDCoreDataManager.swift */; };
 		A8B43DDE29C1AEDE00FADAF0 /* MDContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DDD29C1AEDE00FADAF0 /* MDContextManager.swift */; };
-		A8B43DE729C32C8900FADAF0 /* MDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DE629C32C8900FADAF0 /* MDSettingViewController.m */; };
 		A8B43DF329C5B55600FADAF0 /* MDDateAndWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DF229C5B55600FADAF0 /* MDDateAndWeatherView.swift */; };
 		A8B43DF629C5C8DC00FADAF0 /* MDConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DF529C5C8DC00FADAF0 /* MDConstant.swift */; };
 		A8B43DF829C5DB0E00FADAF0 /* MDDatePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DF729C5DB0E00FADAF0 /* MDDatePopUpView.swift */; };
@@ -48,16 +50,12 @@
 		A8B43E0029C7207A00FADAF0 /* MDCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DFF29C7207A00FADAF0 /* MDCollectionItemCell.swift */; };
 		A8B43E0429C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0329C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift */; };
 		A8B43E0629C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0529C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift */; };
-		A8B43E0A29C869D000FADAF0 /* MDWriteNoteSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0929C869D000FADAF0 /* MDWriteNoteSettingCell.swift */; };
 		A8B43E0E29C8889000FADAF0 /* UIColor+MDColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0D29C8889000FADAF0 /* UIColor+MDColorHelper.m */; };
 		A8B43E1029C96DB700FADAF0 /* UIButton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0F29C96DB700FADAF0 /* UIButton+Action.swift */; };
 		A8B43E1229C9720E00FADAF0 /* MDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E1129C9720E00FADAF0 /* MDKeys.swift */; };
-		A8B43E1529C9DF3100FADAF0 /* TestDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E1429C9DF3100FADAF0 /* TestDownloadViewController.m */; };
-		A8BF494E29D19C0F007BB6C7 /* MDFontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF494D29D19C0F007BB6C7 /* MDFontManager.m */; };
 		A8BF495029D1B0A6007BB6C7 /* MDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF494F29D1B0A6007BB6C7 /* MDTextView.swift */; };
-		A8BF495229D1B8AB007BB6C7 /* MDContextManager+Noti.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF495129D1B8AB007BB6C7 /* MDContextManager+Noti.swift */; };
+		A8BF495229D1B8AB007BB6C7 /* MDContextManager+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF495129D1B8AB007BB6C7 /* MDContextManager+RX.swift */; };
 		A8BF495529D1F997007BB6C7 /* MDTextInfoModelTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF495429D1F997007BB6C7 /* MDTextInfoModelTransformer.m */; };
-		A8BF495829D1FFD5007BB6C7 /* MDTextInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF495729D1FFD5007BB6C7 /* MDTextInfoModel.m */; };
 		A8BF496929D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF496729D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.m */; };
 		A8BF496A29D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BF496829D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.m */; };
 		A8BF496E29D44E36007BB6C7 /* MDContextManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF496D29D44E36007BB6C7 /* MDContextManager+Delegate.swift */; };
@@ -97,7 +95,6 @@
 		A860EF4529ED621600F057B1 /* MDPhotoWallDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPhotoWallDetailView.swift; sourceTree = "<group>"; };
 		A860EF4729ED631000F057B1 /* MDPhotoDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPhotoDetailViewCell.swift; sourceTree = "<group>"; };
 		A860EF4929EE689E00F057B1 /* MDDetailViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDDetailViewFlowLayout.swift; sourceTree = "<group>"; };
-		A88120F429F3D20000677488 /* testRXSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRXSwiftViewController.swift; sourceTree = "<group>"; };
 		A88120F729F5702F00677488 /* MDTextAlignSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextAlignSettingCell.swift; sourceTree = "<group>"; };
 		A88120F929F57BB000677488 /*  MDTextInfoRXModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MDTextInfoRXModel.swift"; sourceTree = "<group>"; };
 		A88120FB29F6E70B00677488 /* MDSettingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDSettingInfoModel.swift; sourceTree = "<group>"; };
@@ -109,10 +106,12 @@
 		A88809902A0116350007A579 /* MDTextFontSizeSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextFontSizeSettingCell.swift; sourceTree = "<group>"; };
 		A88809922A013C1C0007A579 /* RXSwift+MDDairy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RXSwift+MDDairy.swift"; sourceTree = "<group>"; };
 		A88809942A04F9FC0007A579 /* MDTextFontWeightSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextFontWeightSettingCell.swift; sourceTree = "<group>"; };
+		A88809982A05136D0007A579 /* MDImageListTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDImageListTransformer.swift; sourceTree = "<group>"; };
+		A888099A2A052BBE0007A579 /* MDTextInsertImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextInsertImageCell.swift; sourceTree = "<group>"; };
+		A888099D2A0609A40007A579 /* MDStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDStatisticsViewController.swift; sourceTree = "<group>"; };
+		A888099F2A0688A50007A579 /* MDStatisticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDStatisticsHelper.swift; sourceTree = "<group>"; };
 		A8B43DD829C041B400FADAF0 /* MDCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCoreDataManager.swift; sourceTree = "<group>"; };
 		A8B43DDD29C1AEDE00FADAF0 /* MDContextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDContextManager.swift; sourceTree = "<group>"; };
-		A8B43DE529C32C8900FADAF0 /* MDSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSettingViewController.h; sourceTree = "<group>"; };
-		A8B43DE629C32C8900FADAF0 /* MDSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSettingViewController.m; sourceTree = "<group>"; };
 		A8B43DF229C5B55600FADAF0 /* MDDateAndWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDDateAndWeatherView.swift; sourceTree = "<group>"; };
 		A8B43DF429C5C36E00FADAF0 /* MDPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDPrefixHeader.pch; sourceTree = "<group>"; };
 		A8B43DF529C5C8DC00FADAF0 /* MDConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDConstant.swift; sourceTree = "<group>"; };
@@ -122,21 +121,14 @@
 		A8B43DFF29C7207A00FADAF0 /* MDCollectionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCollectionItemCell.swift; sourceTree = "<group>"; };
 		A8B43E0329C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWriteNoteSettingPopover.swift; sourceTree = "<group>"; };
 		A8B43E0529C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWriteNoteSettingViewModel.swift; sourceTree = "<group>"; };
-		A8B43E0929C869D000FADAF0 /* MDWriteNoteSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWriteNoteSettingCell.swift; sourceTree = "<group>"; };
 		A8B43E0C29C8889000FADAF0 /* UIColor+MDColorHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MDColorHelper.h"; sourceTree = "<group>"; };
 		A8B43E0D29C8889000FADAF0 /* UIColor+MDColorHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MDColorHelper.m"; sourceTree = "<group>"; };
 		A8B43E0F29C96DB700FADAF0 /* UIButton+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Action.swift"; sourceTree = "<group>"; };
 		A8B43E1129C9720E00FADAF0 /* MDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDKeys.swift; sourceTree = "<group>"; };
-		A8B43E1329C9DF3100FADAF0 /* TestDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDownloadViewController.h; sourceTree = "<group>"; };
-		A8B43E1429C9DF3100FADAF0 /* TestDownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDownloadViewController.m; sourceTree = "<group>"; };
-		A8BF494C29D19C0F007BB6C7 /* MDFontManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFontManager.h; sourceTree = "<group>"; };
-		A8BF494D29D19C0F007BB6C7 /* MDFontManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFontManager.m; sourceTree = "<group>"; };
 		A8BF494F29D1B0A6007BB6C7 /* MDTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextView.swift; sourceTree = "<group>"; };
-		A8BF495129D1B8AB007BB6C7 /* MDContextManager+Noti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MDContextManager+Noti.swift"; sourceTree = "<group>"; };
+		A8BF495129D1B8AB007BB6C7 /* MDContextManager+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MDContextManager+RX.swift"; sourceTree = "<group>"; };
 		A8BF495329D1F997007BB6C7 /* MDTextInfoModelTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTextInfoModelTransformer.h; sourceTree = "<group>"; };
 		A8BF495429D1F997007BB6C7 /* MDTextInfoModelTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTextInfoModelTransformer.m; sourceTree = "<group>"; };
-		A8BF495629D1FFD5007BB6C7 /* MDTextInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTextInfoModel.h; sourceTree = "<group>"; };
-		A8BF495729D1FFD5007BB6C7 /* MDTextInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTextInfoModel.m; sourceTree = "<group>"; };
 		A8BF496529D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MDDairyCommonModel+CoreDataProperties.h"; path = "MyDairy/MDDairyCommonModel+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
 		A8BF496629D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MDDairyCommonModel+CoreDataClass.h"; path = "MyDairy/MDDairyCommonModel+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
 		A8BF496729D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MDDairyCommonModel+CoreDataClass.m"; path = "MyDairy/MDDairyCommonModel+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
@@ -202,8 +194,6 @@
 				A860EF3829EBDF8700F057B1 /* MDPersonalCenterModule */,
 				A8B43DEF29C5B4C600FADAF0 /* MDWirteDairyModule */,
 				A80AD39E29BF572300AE74F1 /* MyDairy-Bridging-Header.h */,
-				A8B43DE529C32C8900FADAF0 /* MDSettingViewController.h */,
-				A8B43DE629C32C8900FADAF0 /* MDSettingViewController.m */,
 			);
 			path = MyDairy;
 			sourceTree = "<group>";
@@ -211,6 +201,7 @@
 		A860EF3829EBDF8700F057B1 /* MDPersonalCenterModule */ = {
 			isa = PBXGroup;
 			children = (
+				A888099C2A06080B0007A579 /* MDStatistics */,
 				A860EF3929EBE0A000F057B1 /* MDPersonalCenterViewController.swift */,
 				A860EF3B29EBE61200F057B1 /* MDPersonalCenterItemCell.swift */,
 				A860EF3D29EBEA1800F057B1 /* MDPersonalCenterSettingItemModel.swift */,
@@ -232,8 +223,18 @@
 				A88120FB29F6E70B00677488 /* MDSettingInfoModel.swift */,
 				A888098E2A00F06A0007A579 /* MDTextColorSettingCell.swift */,
 				A88809942A04F9FC0007A579 /* MDTextFontWeightSettingCell.swift */,
+				A888099A2A052BBE0007A579 /* MDTextInsertImageCell.swift */,
 			);
 			path = MDTextSettingCells;
+			sourceTree = "<group>";
+		};
+		A888099C2A06080B0007A579 /* MDStatistics */ = {
+			isa = PBXGroup;
+			children = (
+				A888099D2A0609A40007A579 /* MDStatisticsViewController.swift */,
+				A888099F2A0688A50007A579 /* MDStatisticsHelper.swift */,
+			);
+			path = MDStatistics;
 			sourceTree = "<group>";
 		};
 		A8B43DE829C5AEBC00FADAF0 /* MDBase */ = {
@@ -265,9 +266,8 @@
 				A8BF496829D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.m */,
 				A8BF495329D1F997007BB6C7 /* MDTextInfoModelTransformer.h */,
 				A8BF495429D1F997007BB6C7 /* MDTextInfoModelTransformer.m */,
-				A8BF495629D1FFD5007BB6C7 /* MDTextInfoModel.h */,
-				A8BF495729D1FFD5007BB6C7 /* MDTextInfoModel.m */,
 				A88120F929F57BB000677488 /*  MDTextInfoRXModel.swift */,
+				A88809982A05136D0007A579 /* MDImageListTransformer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,10 +278,7 @@
 				A8B43DED29C5B48A00FADAF0 /* Cells */,
 				A8B43DEC29C5B06400FADAF0 /* ViewModel */,
 				A80AD3A329BF578400AE74F1 /* MDHomeViewController.h */,
-				A88120F429F3D20000677488 /* testRXSwiftViewController.swift */,
 				A80AD3A529BF578400AE74F1 /* MDHomeViewController.m */,
-				A8B43E1329C9DF3100FADAF0 /* TestDownloadViewController.h */,
-				A8B43E1429C9DF3100FADAF0 /* TestDownloadViewController.m */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -317,11 +314,9 @@
 		A8B43DF029C5B4E100FADAF0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				A8BF494C29D19C0F007BB6C7 /* MDFontManager.h */,
-				A8BF494D29D19C0F007BB6C7 /* MDFontManager.m */,
 				A8B43DD829C041B400FADAF0 /* MDCoreDataManager.swift */,
 				A8B43DDD29C1AEDE00FADAF0 /* MDContextManager.swift */,
-				A8BF495129D1B8AB007BB6C7 /* MDContextManager+Noti.swift */,
+				A8BF495129D1B8AB007BB6C7 /* MDContextManager+RX.swift */,
 				A8BF496D29D44E36007BB6C7 /* MDContextManager+Delegate.swift */,
 			);
 			path = Manager;
@@ -338,7 +333,6 @@
 				A8B43DFF29C7207A00FADAF0 /* MDCollectionItemCell.swift */,
 				A8B43E0329C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift */,
 				A8B43E0529C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift */,
-				A8B43E0929C869D000FADAF0 /* MDWriteNoteSettingCell.swift */,
 				A8BF494F29D1B0A6007BB6C7 /* MDTextView.swift */,
 				A860EF1B29E6E48300F057B1 /* MDPicturesView.swift */,
 				A860EF1D29E6E82D00F057B1 /* MDPicturesViewCell.swift */,
@@ -510,9 +504,8 @@
 				A860EF1E29E6E82D00F057B1 /* MDPicturesViewCell.swift in Sources */,
 				A8B43DDE29C1AEDE00FADAF0 /* MDContextManager.swift in Sources */,
 				A8BF495529D1F997007BB6C7 /* MDTextInfoModelTransformer.m in Sources */,
-				A8B43E1529C9DF3100FADAF0 /* TestDownloadViewController.m in Sources */,
+				A88809A02A0688A50007A579 /* MDStatisticsHelper.swift in Sources */,
 				A860EF4429ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift in Sources */,
-				A88120F529F3D20000677488 /* testRXSwiftViewController.swift in Sources */,
 				A8852A9429D55CB90013FB0B /* MDCustomNavBar.m in Sources */,
 				A88809952A04F9FC0007A579 /* MDTextFontWeightSettingCell.swift in Sources */,
 				A860EF3C29EBE61200F057B1 /* MDPersonalCenterItemCell.swift in Sources */,
@@ -524,29 +517,29 @@
 				A8BF497129D45338007BB6C7 /* MDBaseFuncHelper.m in Sources */,
 				A860EF3E29EBEA1800F057B1 /* MDPersonalCenterSettingItemModel.swift in Sources */,
 				A8B43E0429C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift in Sources */,
+				A888099E2A0609A40007A579 /* MDStatisticsViewController.swift in Sources */,
 				A88120FC29F6E70B00677488 /* MDSettingInfoModel.swift in Sources */,
 				A8BF496929D2F702007BB6C7 /* MDDairyCommonModel+CoreDataClass.m in Sources */,
 				A80AD3AE29BF578400AE74F1 /* MDHomeViewController.m in Sources */,
-				A8BF494E29D19C0F007BB6C7 /* MDFontManager.m in Sources */,
 				A8B43DF629C5C8DC00FADAF0 /* MDConstant.swift in Sources */,
+				A88809992A05136D0007A579 /* MDImageListTransformer.swift in Sources */,
 				A8852A9129D55BF30013FB0B /* UIViewController+MDCustomNavBar.m in Sources */,
 				A8B43DFA29C719B600FADAF0 /* MDWeatherPopUpView.swift in Sources */,
 				A860EF1C29E6E48300F057B1 /* MDPicturesView.swift in Sources */,
-				A8B43E0A29C869D000FADAF0 /* MDWriteNoteSettingCell.swift in Sources */,
 				A80AD3AD29BF578400AE74F1 /* MDHomeTableViewCell.m in Sources */,
 				A8B43DF329C5B55600FADAF0 /* MDDateAndWeatherView.swift in Sources */,
 				A8B43DF829C5DB0E00FADAF0 /* MDDatePopUpView.swift in Sources */,
 				A8B43E1029C96DB700FADAF0 /* UIButton+Action.swift in Sources */,
 				A860EF4229ED291F00F057B1 /* MDPhotoWallCell.swift in Sources */,
+				A888099B2A052BBE0007A579 /* MDTextInsertImageCell.swift in Sources */,
 				A860EF4829ED631000F057B1 /* MDPhotoDetailViewCell.swift in Sources */,
-				A8BF495229D1B8AB007BB6C7 /* MDContextManager+Noti.swift in Sources */,
+				A8BF495229D1B8AB007BB6C7 /* MDContextManager+RX.swift in Sources */,
 				A8B43E0E29C8889000FADAF0 /* UIColor+MDColorHelper.m in Sources */,
 				A8B43E0629C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift in Sources */,
 				A860EF3A29EBE0A000F057B1 /* MDPersonalCenterViewController.swift in Sources */,
 				A8B43DFC29C71AA500FADAF0 /* MDBasePopover.swift in Sources */,
 				A860EF4A29EE689E00F057B1 /* MDDetailViewFlowLayout.swift in Sources */,
 				A88120F829F5702F00677488 /* MDTextAlignSettingCell.swift in Sources */,
-				A8B43DE729C32C8900FADAF0 /* MDSettingViewController.m in Sources */,
 				A8BF496E29D44E36007BB6C7 /* MDContextManager+Delegate.swift in Sources */,
 				A80AD3B129BF578400AE74F1 /* AppDelegate.m in Sources */,
 				A860EF4029EC44AA00F057B1 /* MDPhotoWallViewController.swift in Sources */,
@@ -555,7 +548,6 @@
 				A888098F2A00F06B0007A579 /* MDTextColorSettingCell.swift in Sources */,
 				A80AD3B229BF578400AE74F1 /* MDHomeViewModel.m in Sources */,
 				A80AD39029BF56FD00AE74F1 /* MyDairy.xcdatamodeld in Sources */,
-				A8BF495829D1FFD5007BB6C7 /* MDTextInfoModel.m in Sources */,
 				A88809932A013C1C0007A579 /* RXSwift+MDDairy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

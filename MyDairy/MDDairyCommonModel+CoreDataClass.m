@@ -8,7 +8,6 @@
 //
 
 #import "MDDairyCommonModel+CoreDataClass.h"
-#import "MDTextInfoModel.h"
 
 @implementation MDDairyCommonModel
 

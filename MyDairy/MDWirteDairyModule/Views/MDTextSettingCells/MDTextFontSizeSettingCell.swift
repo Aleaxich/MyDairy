@@ -21,35 +21,51 @@ class MDTextFontSizeSettingCell: UITableViewCell {
         $0.setTitle("小", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.sizeInfo = 16
-        $0.showBoarder = true
+        $0.changeBackGroundColorWhenSelected = true
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
     }
     
     lazy var button2 = MDTextSettingButton().then{
         $0.setTitle("较小", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.sizeInfo = 18
-        $0.showBoarder = true
+        $0.changeBackGroundColorWhenSelected = true
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
     }
     
     lazy var button3 = MDTextSettingButton().then{
         $0.setTitle("中等", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.sizeInfo = 20
-        $0.showBoarder = true
+        $0.changeBackGroundColorWhenSelected = true
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
     }
     
     lazy var button4 = MDTextSettingButton().then{
         $0.setTitle("较大", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.sizeInfo = 22
-        $0.showBoarder = true
+        $0.changeBackGroundColorWhenSelected = true
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
     }
     
     lazy var button5 = MDTextSettingButton().then{
         $0.setTitle("大", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.sizeInfo = 24
-        $0.showBoarder = true
+        $0.changeBackGroundColorWhenSelected = true
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
+    }
+    
+
+    
+    lazy var crossLine = UIView().then {
+        $0.backgroundColor = .gray
     }
     
     
@@ -70,6 +86,7 @@ class MDTextFontSizeSettingCell: UITableViewCell {
     }
     
     func setupSubviews() {
+        backgroundColor = UIColor(hexString: "#F5F5F5")
         self.contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (maker) in
             maker.left.equalToSuperview().offset(10)
@@ -93,8 +110,17 @@ class MDTextFontSizeSettingCell: UITableViewCell {
         stackView.snp.makeConstraints { (maker) in
             maker.left.equalTo(titleLabel.snp_rightMargin).offset(10)
             maker.centerY.equalToSuperview()
-            maker.size.equalTo(CGSize(width: 300, height: 50))
+            maker.size.equalTo(CGSize(width: 300, height: 35))
+        }
+        
+     
+        
+        contentView.addSubview(crossLine)
+        crossLine.snp.makeConstraints { make in
+            make.height.equalTo(0.5)
+            make.centerX.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(25)
+            make.right.equalToSuperview().offset(-25)
         }
     }
-    
 }

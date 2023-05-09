@@ -29,15 +29,21 @@ import Then
         fatalError("init(coder:) has not been implemented")
     }
     
-
-    
     func createDataSource() {
         /// 照片墙
-        let photoWallCell = MDPersonalCenterSettingItemModel(title: "照片墙", selectedAction: { [weak self] in
+        let photoWallCell = MDPersonalCenterSettingItemModel(title: "照片墙",image: "icon_photo_wall", selectedAction: { [weak self] in
             let vc = MDPhotoWallViewController()
             self?.present(vc, animated: true)
         })
+        
+        /// 统计
+        let statisticsCell = MDPersonalCenterSettingItemModel(title: "统计",image: "icon_data", selectedAction: { [weak self] in
+            let vc = MDStatisticsViewController()
+            self?.present(vc, animated: true)
+        })
+        
         dataSource.append(photoWallCell)
+        dataSource.append(statisticsCell)
         tableView.reloadData()
     }
 
@@ -48,8 +54,10 @@ import Then
         }
         view.backgroundColor = .white
         tableView.register(MDPersonalCenterItemCell.self, forCellReuseIdentifier: NSStringFromClass(MDPersonalCenterItemCell.self))
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isScrollEnabled = false
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
