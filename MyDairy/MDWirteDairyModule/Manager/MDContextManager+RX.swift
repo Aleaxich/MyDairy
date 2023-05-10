@@ -124,7 +124,7 @@ extension MDContextManager {
             .observeWeakly(String.self, "model.weather")
             .skip(1)
             .subscribe{ value in
-                self.saved = false
+//                self.saved = false
              }
             .disposed(by: bag)
        

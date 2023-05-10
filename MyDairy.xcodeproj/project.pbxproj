@@ -40,6 +40,7 @@
 		A888099B2A052BBE0007A579 /* MDTextInsertImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888099A2A052BBE0007A579 /* MDTextInsertImageCell.swift */; };
 		A888099E2A0609A40007A579 /* MDStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888099D2A0609A40007A579 /* MDStatisticsViewController.swift */; };
 		A88809A02A0688A50007A579 /* MDStatisticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888099F2A0688A50007A579 /* MDStatisticsHelper.swift */; };
+		A88809A82A0B5F6B0007A579 /* UIButton+BigFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A88809A72A0B5F6B0007A579 /* UIButton+BigFrame.m */; };
 		A8B43DD929C041B400FADAF0 /* MDCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DD829C041B400FADAF0 /* MDCoreDataManager.swift */; };
 		A8B43DDE29C1AEDE00FADAF0 /* MDContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DDD29C1AEDE00FADAF0 /* MDContextManager.swift */; };
 		A8B43DF329C5B55600FADAF0 /* MDDateAndWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DF229C5B55600FADAF0 /* MDDateAndWeatherView.swift */; };
@@ -49,7 +50,6 @@
 		A8B43DFC29C71AA500FADAF0 /* MDBasePopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DFB29C71AA500FADAF0 /* MDBasePopover.swift */; };
 		A8B43E0029C7207A00FADAF0 /* MDCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43DFF29C7207A00FADAF0 /* MDCollectionItemCell.swift */; };
 		A8B43E0429C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0329C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift */; };
-		A8B43E0629C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0529C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift */; };
 		A8B43E0E29C8889000FADAF0 /* UIColor+MDColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0D29C8889000FADAF0 /* UIColor+MDColorHelper.m */; };
 		A8B43E1029C96DB700FADAF0 /* UIButton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E0F29C96DB700FADAF0 /* UIButton+Action.swift */; };
 		A8B43E1229C9720E00FADAF0 /* MDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B43E1129C9720E00FADAF0 /* MDKeys.swift */; };
@@ -110,6 +110,8 @@
 		A888099A2A052BBE0007A579 /* MDTextInsertImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextInsertImageCell.swift; sourceTree = "<group>"; };
 		A888099D2A0609A40007A579 /* MDStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDStatisticsViewController.swift; sourceTree = "<group>"; };
 		A888099F2A0688A50007A579 /* MDStatisticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDStatisticsHelper.swift; sourceTree = "<group>"; };
+		A88809A62A0B5F6B0007A579 /* UIButton+BigFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+BigFrame.h"; sourceTree = "<group>"; };
+		A88809A72A0B5F6B0007A579 /* UIButton+BigFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BigFrame.m"; sourceTree = "<group>"; };
 		A8B43DD829C041B400FADAF0 /* MDCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCoreDataManager.swift; sourceTree = "<group>"; };
 		A8B43DDD29C1AEDE00FADAF0 /* MDContextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDContextManager.swift; sourceTree = "<group>"; };
 		A8B43DF229C5B55600FADAF0 /* MDDateAndWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDDateAndWeatherView.swift; sourceTree = "<group>"; };
@@ -120,7 +122,6 @@
 		A8B43DFB29C71AA500FADAF0 /* MDBasePopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDBasePopover.swift; sourceTree = "<group>"; };
 		A8B43DFF29C7207A00FADAF0 /* MDCollectionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCollectionItemCell.swift; sourceTree = "<group>"; };
 		A8B43E0329C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWriteNoteSettingPopover.swift; sourceTree = "<group>"; };
-		A8B43E0529C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDWriteNoteSettingViewModel.swift; sourceTree = "<group>"; };
 		A8B43E0C29C8889000FADAF0 /* UIColor+MDColorHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MDColorHelper.h"; sourceTree = "<group>"; };
 		A8B43E0D29C8889000FADAF0 /* UIColor+MDColorHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MDColorHelper.m"; sourceTree = "<group>"; };
 		A8B43E0F29C96DB700FADAF0 /* UIButton+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Action.swift"; sourceTree = "<group>"; };
@@ -157,6 +158,19 @@
 				75F672E4504BBB2E0FFE8DC4 /* Pods-MyDairy.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A80728452A1271C5001379BD /* MDPhotoWall */ = {
+			isa = PBXGroup;
+			children = (
+				A860EF3F29EC44AA00F057B1 /* MDPhotoWallViewController.swift */,
+				A860EF4129ED291F00F057B1 /* MDPhotoWallCell.swift */,
+				A860EF4329ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift */,
+				A860EF4529ED621600F057B1 /* MDPhotoWallDetailView.swift */,
+				A860EF4729ED631000F057B1 /* MDPhotoDetailViewCell.swift */,
+				A860EF4929EE689E00F057B1 /* MDDetailViewFlowLayout.swift */,
+			);
+			path = MDPhotoWall;
 			sourceTree = "<group>";
 		};
 		A80AD37629BF56FD00AE74F1 = {
@@ -201,16 +215,11 @@
 		A860EF3829EBDF8700F057B1 /* MDPersonalCenterModule */ = {
 			isa = PBXGroup;
 			children = (
+				A80728452A1271C5001379BD /* MDPhotoWall */,
 				A888099C2A06080B0007A579 /* MDStatistics */,
 				A860EF3929EBE0A000F057B1 /* MDPersonalCenterViewController.swift */,
 				A860EF3B29EBE61200F057B1 /* MDPersonalCenterItemCell.swift */,
 				A860EF3D29EBEA1800F057B1 /* MDPersonalCenterSettingItemModel.swift */,
-				A860EF3F29EC44AA00F057B1 /* MDPhotoWallViewController.swift */,
-				A860EF4129ED291F00F057B1 /* MDPhotoWallCell.swift */,
-				A860EF4329ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift */,
-				A860EF4529ED621600F057B1 /* MDPhotoWallDetailView.swift */,
-				A860EF4729ED631000F057B1 /* MDPhotoDetailViewCell.swift */,
-				A860EF4929EE689E00F057B1 /* MDDetailViewFlowLayout.swift */,
 			);
 			path = MDPersonalCenterModule;
 			sourceTree = "<group>";
@@ -253,6 +262,8 @@
 				A8852A9229D55CB90013FB0B /* MDCustomNavBar.h */,
 				A8852A9329D55CB90013FB0B /* MDCustomNavBar.m */,
 				A88809922A013C1C0007A579 /* RXSwift+MDDairy.swift */,
+				A88809A62A0B5F6B0007A579 /* UIButton+BigFrame.h */,
+				A88809A72A0B5F6B0007A579 /* UIButton+BigFrame.m */,
 			);
 			path = MDBase;
 			sourceTree = "<group>";
@@ -332,7 +343,6 @@
 				A8B43DFB29C71AA500FADAF0 /* MDBasePopover.swift */,
 				A8B43DFF29C7207A00FADAF0 /* MDCollectionItemCell.swift */,
 				A8B43E0329C84C5400FADAF0 /* MDWriteNoteSettingPopover.swift */,
-				A8B43E0529C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift */,
 				A8BF494F29D1B0A6007BB6C7 /* MDTextView.swift */,
 				A860EF1B29E6E48300F057B1 /* MDPicturesView.swift */,
 				A860EF1D29E6E82D00F057B1 /* MDPicturesViewCell.swift */,
@@ -501,6 +511,7 @@
 				A860EF4629ED621600F057B1 /* MDPhotoWallDetailView.swift in Sources */,
 				A8BF496A29D2F702007BB6C7 /* MDDairyCommonModel+CoreDataProperties.m in Sources */,
 				A88809912A0116350007A579 /* MDTextFontSizeSettingCell.swift in Sources */,
+				A88809A82A0B5F6B0007A579 /* UIButton+BigFrame.m in Sources */,
 				A860EF1E29E6E82D00F057B1 /* MDPicturesViewCell.swift in Sources */,
 				A8B43DDE29C1AEDE00FADAF0 /* MDContextManager.swift in Sources */,
 				A8BF495529D1F997007BB6C7 /* MDTextInfoModelTransformer.m in Sources */,
@@ -535,7 +546,6 @@
 				A860EF4829ED631000F057B1 /* MDPhotoDetailViewCell.swift in Sources */,
 				A8BF495229D1B8AB007BB6C7 /* MDContextManager+RX.swift in Sources */,
 				A8B43E0E29C8889000FADAF0 /* UIColor+MDColorHelper.m in Sources */,
-				A8B43E0629C8567600FADAF0 /* MDWriteNoteSettingViewModel.swift in Sources */,
 				A860EF3A29EBE0A000F057B1 /* MDPersonalCenterViewController.swift in Sources */,
 				A8B43DFC29C71AA500FADAF0 /* MDBasePopover.swift in Sources */,
 				A860EF4A29EE689E00F057B1 /* MDDetailViewFlowLayout.swift in Sources */,

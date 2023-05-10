@@ -13,6 +13,7 @@ import RxSwift
 import RxCocoa
 
 class MDTextView:UIView {
+    
     var contextManager:MDContextManager
     // 文字
     lazy var textView = UITextView().then{
@@ -149,6 +150,14 @@ class MDTextView:UIView {
         let item = UIBarButtonItem(title: "完成", style: .done, target: self, action: #selector(dismissKeyboard))
         toolbar.setItems([item], animated: false)
         textView.inputAccessoryView = toolbar
+        
+        picCollectionView.deleteAllPictures = {[weak self] in
+            self!.removePicView()
+        }
+        
+        picCollectionView.deletePicture = {[weak self] index in
+            self!.contextManager.deletePicture(index: index)
+        }
         /// 把 model 的 imagelist 传进去
         if contextManager.imageList != nil {
             changeToPicView(contextManager.imageList!)
@@ -156,7 +165,6 @@ class MDTextView:UIView {
     }
     
     func changeToPicView(_ imageDataList: [NSData]) {
-
         backGroundView.addSubview(picCollectionView)
         picCollectionView.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: SCREEN_WIDTH_SWIFT, height:350))
@@ -164,12 +172,22 @@ class MDTextView:UIView {
         }
         picCollectionView.loadData(imageDataList: imageDataList)
         
+        
         textView.snp.remakeConstraints { make in
             make.top.equalTo(picCollectionView.snp_bottomMargin)
             make.width.centerX.equalTo(self)
             make.bottom.equalTo(self)
         }
         layoutIfNeeded()
+    }
+    
+    func removePicView() {
+        if picCollectionView.superview != nil {
+            picCollectionView.removeFromSuperview()
+            self.textView.snp.remakeConstraints { make in
+                make.edges.equalTo(self)
+            }
+        }
     }
     
     func caretChange() {

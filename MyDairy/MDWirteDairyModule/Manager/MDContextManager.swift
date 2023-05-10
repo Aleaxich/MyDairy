@@ -34,6 +34,7 @@ import RxCocoa
     var imageList:[NSData]?
     ///有改动但是未保存
     var saved = true
+    /// 添加图片
     var insertPicAction:((_ imageDataList:[NSData])->())?
     var caretChange:(()->())?
     var bag = DisposeBag()
@@ -136,6 +137,15 @@ import RxCocoa
         saved = false
         guard let insertPic = insertPicAction else { return }
         insertPic(model.imageList as! [NSData])
+        SVProgressHUD.showSuccess(withStatus: "添加成功")
+        SVProgressHUD.dismiss(withDelay: 0.5)
+    }
+    
+    // 删除图片
+    func deletePicture(index:Int) {
+        guard index < model.imageList!.count else  { return }
+        model.imageList?.removeObject(at:index)
+        saved = false
     }
     
 

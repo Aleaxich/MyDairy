@@ -7,32 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "61F84370-433F-4DE6-A7BF-78DDB43170BC"
-            shouldBeEnabled = "Yes"
+            uuid = "9744FE5E-0C0F-40C5-8D45-B2AF664926E1"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyDairy/MDWirteDairyModule/Manager/MDContextManager+RX.swift"
+            filePath = "MyDairy/MDWirteDairyModule/Views/MDPicturesView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "setupNoti()"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "loadData(imageDataList:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9AA6E1E9-1122-4CE9-B499-49E56B2E3974"
+            uuid = "B82147CF-CD77-44AD-B453-1481D7375374"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyDairy/MDWirteDairyModule/Manager/MDContextManager+RX.swift"
+            filePath = "MyDairy/MDPersonalCenterModule/MDStatistics/MDStatisticsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "setupNoti()"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "currentYear"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E283A2DB-8276-4D47-BAD7-E37F994427D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyDairy/MDPersonalCenterModule/MDStatistics/MDStatisticsHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "calculate(models:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

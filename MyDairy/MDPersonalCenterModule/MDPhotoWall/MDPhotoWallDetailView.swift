@@ -12,13 +12,18 @@ import RxSwift
 import RxCocoa
 import UIKit
 
+/// 详细浏览页面
 class MDPhotoWallDetailView : MDBasePopover {
     /// 数据源
-    lazy var imageDataList = [NSData]()
+    @objc dynamic lazy var imageDataList = [NSData]()
     
     lazy var bag = DisposeBag()
+    
     /// 用户删除图片
     var imageListChanged:(([NSData]?) -> ())?
+    
+    /// 退出回调
+    var dismissAction:(() -> ())?
     
     /// 删除按钮
     lazy var deleteButton = UIButton().then {
@@ -28,17 +33,25 @@ class MDPhotoWallDetailView : MDBasePopover {
             .subscribe { [weak self] event in
                 var item = self?.collectionView.indexPathsForVisibleItems.first
                 guard let realItem = item else {return}
-                self?.collectionView.performBatchUpdates({
-                    self?.imageDataList.remove(at: realItem.item)
-                    self?.collectionView.deleteItems(at: [realItem])
+                self!.collectionView.performBatchUpdates({
+                    self!.imageDataList.remove(at: realItem.item)
+                    self!.collectionView.deleteItems(at: [realItem])
                     guard let changedAction = self?.imageListChanged else { return }
-                    changedAction(self?.imageDataList)
+                    changedAction(self!.imageDataList as [NSData])
                 }, completion: {_ in
-                    self?.collectionView.reloadData()
+                    self!.countSubject.onNext(self!.imageDataList.count)
+                    guard self!.imageDataList.count != 0 else {
+                        self!.dismiss()
+                        guard let action = self!.dismissAction else { return }
+                        action()
+                        return
+                    }
+                    self!.collectionView.reloadData()
                 })
             }.disposed(by: bag)
     }
     
+    // 保存按钮
     lazy var saveButton = UIButton().then {
         $0.setImage(UIImage(named: "icon_save_image"), for: .normal)
         $0.rx
@@ -57,7 +70,10 @@ class MDPhotoWallDetailView : MDBasePopover {
         $0.textColor = .white
         $0.font = UIFont.systemFont(ofSize: 20)
     }
-    lazy var collectionView =  {
+    
+    lazy var countSubject = PublishSubject<Int>()
+
+    lazy var collectionView = {
         let layout = MDDetailViewFlowLayout.init()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .black
@@ -75,6 +91,7 @@ class MDPhotoWallDetailView : MDBasePopover {
         super.init()
         imageDataList = imageList
         setupSubviews()
+        setupKVO()
     }
     
     required init?(coder: NSCoder) {
@@ -117,7 +134,16 @@ class MDPhotoWallDetailView : MDBasePopover {
         collectionView.scrollToItem(at: currentIndexPath, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
     }
     
+    func setupKVO() {
 
+        countSubject.asDriver(onErrorJustReturn: 0)
+            .map {[weak self] in
+                "\(String(describing: (self!.collectionView.indexPathsForVisibleItems.first?.item ?? 0) + 1)) / \($0)"
+            }
+            .drive(self.orderLabel.rx.text)
+            .disposed(by: bag)
+    }
+    
   @objc func saveError(image: UIImage, didFinishSavingWithError: NSError?, contextInfo: AnyObject) {
         if didFinishSavingWithError != nil {
             SVProgressHUD.showError(withStatus: "保存失败")

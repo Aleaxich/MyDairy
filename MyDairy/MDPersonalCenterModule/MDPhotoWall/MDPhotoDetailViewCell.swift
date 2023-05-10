@@ -25,7 +25,7 @@ class MDPhotoDetailViewCell: UICollectionViewCell {
     }
     
     func loadImage(_ image:UIImage) {
-            imageView.image = image
+        imageView.image = image
     }
     
     func setupSubviews() {

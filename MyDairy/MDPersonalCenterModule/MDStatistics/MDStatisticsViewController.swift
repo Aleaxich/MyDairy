@@ -18,40 +18,50 @@ public class MDStatisticsViewController: MDBaseViewController {
     lazy var bag = DisposeBag()
     
     lazy var titleLabel = UILabel().then {
-        $0.text = "感谢你的一路陪伴"
-        $0.font = UIFont(name: "", size: 40)
+//        $0.text = "感谢你的一路陪伴"
+        $0.font = UIFont(name: "Noteworthy-Bold", size: 40)
     }
     
     lazy var line1 = UIView().then {
-        $0.backgroundColor = .gray
+        $0.backgroundColor = UIColor(hexString: "#FFF0F5")
     }
     
     lazy var line2 = UIView().then {
-        $0.backgroundColor = .gray
+        $0.backgroundColor = UIColor(hexString: "#FFF0F5")
     }
     
     lazy var dairyCount = UILabel().then {
         $0.text = "篇数"
+        $0.textAlignment = .center
     }
     
     lazy var textCount = UILabel().then {
         $0.text = "文字"
+        $0.textAlignment = .center
     }
     
     lazy var picturesCount = UILabel().then {
         $0.text = "图片"
+        $0.textAlignment = .center
     }
     
     lazy var dairyNum = UILabel().then {
-        $0.text = "\(MDStatisticsHelper.sharedInstance.mdDairySum)"
+        $0.text = "\(MDStatisticsHelper.sharedInstance.mdTotalDairySum)"
+        $0.textAlignment = .center
+        $0.font = UIFont(name: "Copperplate-Bold", size: 28)
     }
     
     lazy var textNum = UILabel().then {
-        $0.text = "\(MDStatisticsHelper.sharedInstance.mdWordsSum)"
+        $0.text = "\(MDStatisticsHelper.sharedInstance.mdTotalWordsSum)"
+        $0.textAlignment = .center
+        $0.font = UIFont(name: "Copperplate-Bold", size: 28)
+
     }
     
     lazy var picturesNum = UILabel().then {
-        $0.text = "\(MDStatisticsHelper.sharedInstance.mdImagesSum)"
+        $0.text = "\(MDStatisticsHelper.sharedInstance.mdTotalImagesSum)"
+        $0.textAlignment = .center
+        $0.font = UIFont(name: "Copperplate-Bold", size: 28)
     }
     
     lazy var subButton = UIButton().then {
@@ -69,6 +79,7 @@ public class MDStatisticsViewController: MDBaseViewController {
     
     /// 柱状图
     lazy var columnView = AAChartView()
+    
     
     /// 当前年份
     var currentYear:Int{
@@ -114,17 +125,24 @@ public class MDStatisticsViewController: MDBaseViewController {
     
     func setupSubviews() {
         view.backgroundColor = .white
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.frame
+        gradientLayer.locations = [0.3, 1]
+        gradientLayer.startPoint = CGPointMake(0, 0)
+        gradientLayer.endPoint = CGPointMake(1, 1)
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor(hexString: "#E0FFFF").withAlphaComponent(0.05).cgColor]
+        view.layer.addSublayer(gradientLayer)
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(50)
+            make.top.equalToSuperview().offset(100)
         }
         
         view.addSubview(line1)
         let leading:CGFloat = 10
         line1.snp.makeConstraints { make in
             make.size.equalTo(CGSizeMake(SCREEN_WIDTH_SWIFT - leading * 2, 0.5))
-            make.top.equalTo(titleLabel.snp_bottomMargin).offset(50)
+            make.top.equalToSuperview().offset(100)
             make.centerX.equalToSuperview()
         }
         
@@ -169,7 +187,7 @@ public class MDStatisticsViewController: MDBaseViewController {
         
         view.addSubview(columnView)
         columnView.snp.makeConstraints { make in
-            make.size.equalTo(CGSizeMake(SCREEN_WIDTH_SWIFT - 2 * leading, 300))
+            make.size.equalTo(CGSizeMake(SCREEN_WIDTH_SWIFT, 300))
             make.top.equalTo(line2).offset(30)
             make.centerX.equalToSuperview()
         }
@@ -178,7 +196,7 @@ public class MDStatisticsViewController: MDBaseViewController {
         subButton.snp.makeConstraints { make in
             make.size.equalTo(CGSizeMake(15, 15))
             make.left.equalToSuperview().offset(100)
-            make.top.equalTo(columnView.snp_bottomMargin).offset(10)
+            make.top.equalTo(columnView.snp_bottomMargin).offset(20)
         }
         
         subButton.rx
@@ -187,6 +205,7 @@ public class MDStatisticsViewController: MDBaseViewController {
                 self?.currentYear -= 1
         }
         .disposed(by: bag)
+        subButton.hitTestEdgeInsets = UIEdgeInsets(top: -20, left: -20, bottom: -20, right: -20)
         
         addButton.rx
             .tap
@@ -194,6 +213,8 @@ public class MDStatisticsViewController: MDBaseViewController {
                 self?.currentYear += 1
         }
         .disposed(by: bag)
+        addButton.hitTestEdgeInsets = UIEdgeInsets(top: -20, left: -20, bottom: -20, right: -20)
+
         
         view.addSubview(dateLabel)
         dateLabel.snp.makeConstraints { make in
@@ -206,13 +227,12 @@ public class MDStatisticsViewController: MDBaseViewController {
         addButton.snp.makeConstraints { make in
             make.size.equalTo(CGSizeMake(15, 15))
             make.right.equalToSuperview().offset(-100)
-            make.top.equalTo(columnView.snp_bottomMargin).offset(10)
+            make.top.equalTo(columnView.snp_bottomMargin).offset(20)
         }
         
         loadData()
     }
 
-    
     func loadData() {
         // 初始化图表模型
         let formatter = DateFormatter()
@@ -253,6 +273,7 @@ public class MDStatisticsViewController: MDBaseViewController {
         
     }
     
+    /// 根据年份获得数据
     func getStatistics(year:Int) -> [MDMonthlyStatistics] {
         var resList = [MDMonthlyStatistics]()
         for i in  1...12  {
