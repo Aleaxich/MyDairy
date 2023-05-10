@@ -12,6 +12,15 @@ import Then
 
 class MDPicturesView:UIView, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
+    /// 删除了全部的图片
+    var deleteAllPictures:(() -> ())?
+    
+    /// 删除图片
+    var deletePicture:((_ index:Int) -> ())?
+    
+    /// 是否显示删除按钮
+    var hiddenButton = true
+    
     lazy var collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout().then {
             $0.scrollDirection = .horizontal
@@ -27,7 +36,7 @@ class MDPicturesView:UIView, UICollectionViewDelegate,UICollectionViewDataSource
         return collectionView
     }()
     
-    lazy var imageDataList:[NSData] = [NSData]()
+    public lazy var imageDataList:[NSData] = [NSData]()
     
     
     override init(frame: CGRect) {
@@ -54,14 +63,33 @@ class MDPicturesView:UIView, UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(MDPicturesViewCell.self), for: indexPath) as! MDPicturesViewCell
-        cell.loadData(imageDataList[indexPath.item])
+        cell.loadData(imageDataList[indexPath.item], hiddenButton: hiddenButton)
+
         cell.deleteAction = {[weak self] in
             collectionView.performBatchUpdates({
                 self?.imageDataList.remove(at: indexPath.item)
-                       collectionView.deleteItems(at: [indexPath])
+                    collectionView.deleteItems(at: [indexPath])
+                guard let action = self?.deletePicture else { return }
+                action(indexPath.item)
+                self!.hiddenButton = false
             }, completion: {_ in
-                collectionView.reloadData()
+                if self?.imageDataList.count == 0 {
+                    guard let action = self?.deleteAllPictures else { return }
+                    action()
+                } else {
+                    collectionView.reloadData()
+                }
             })
+        }
+        
+        cell.clickHiddenButton = {[weak self] in
+            self?.hiddenButton = true
+            collectionView.reloadData()
+        }
+        
+        cell.showButton = {[weak self] in
+            self?.hiddenButton = false
+            collectionView.reloadData()
         }
         return cell
         

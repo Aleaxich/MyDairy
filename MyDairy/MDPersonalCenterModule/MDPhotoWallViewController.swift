@@ -22,7 +22,6 @@ class MDPhotoWallViewController : UIViewController {
     lazy var coreDataManager = MDCoreDataManager.shareInstance
     
     lazy var collectionView = {
-        
         let layout = UICollectionViewFlowLayout().then {
             $0.scrollDirection = .vertical
             $0.itemSize = CGSize(width: (SCREEN_WIDTH_SWIFT - 20 ) / 3, height: (SCREEN_WIDTH_SWIFT - 20 ) / 3)

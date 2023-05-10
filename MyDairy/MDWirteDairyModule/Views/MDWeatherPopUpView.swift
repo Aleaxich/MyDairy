@@ -15,7 +15,6 @@ class MDWeatherPopUpView: MDBasePopover,UICollectionViewDelegate,UICollectionVie
     // 选择天气
     var iconCollectionView:UICollectionView
     
-    
     var iconList = ["icon_weather_sunny","icon_weather_rain","icon_weather_small_rain","icon_weather_cloud","icon_weather_fog","icon_weather_overcast","icon_weather_snow","icon_weather_small_snow","icon_weather_thundershower","icon_weather_wind"]
     
     override init() {
