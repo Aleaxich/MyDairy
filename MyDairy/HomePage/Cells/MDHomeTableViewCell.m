@@ -20,7 +20,6 @@
 @property (nonatomic,strong) UIImageView *pic;
 ///日期
 @property (nonnull,strong) UILabel *dateLabel;
-
 ///分割线
 @property (nonnull,strong) UIView *crossLine;
 

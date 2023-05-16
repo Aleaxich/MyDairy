@@ -57,6 +57,7 @@ class MDPhotoWallViewController : UIViewController {
     }
     
     func loadData() {
+        //TODO: 后续能不能优化
         let models = coreDataManager.getCoreData()
         models?.forEach({
             guard let imageList = $0.imageList else { return }
@@ -101,18 +102,27 @@ extension MDPhotoWallViewController:UICollectionViewDelegate,UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let view = MDPhotoWallDetailView.init(imageList: imageDataList[indexPath.section].imageList,selectedIndexPath: indexPath)
+        let index = IndexSet(integer: indexPath.section)
+
         view.imageListChanged = {[weak self] imageList in
-            let data = self?.imageDataList[indexPath.section]
-            let orderNum = data?.orderNum
-            let model = self?.coreDataManager.getDataWithOrderNum(orderNum)
-            var mutableArray = [NSData]()
+            self!.imageDataList[indexPath.section].imageList = imageList ?? []
+            let orderNum = self!.imageDataList[indexPath.section].orderNum
+            let model = self!.coreDataManager.getDataWithOrderNum(orderNum)
+            var mutableArray:NSMutableArray = []
             imageList?.forEach {
-                mutableArray.append($0)
+                mutableArray.add($0)
             }
-            model?.imageList = mutableArray as? NSMutableArray
-            self?.coreDataManager.changeDataWithModel(model: model!)
+            model?.imageList = mutableArray
+            self!.coreDataManager.changeDataWithModel(model: model!)
+            self!.collectionView.reloadSections(index)
         }
+        
+        view.dismissAction = {[weak self] in
+            self!.collectionView.reloadSections(index)
+        }
+        
         view.show()
         
     }

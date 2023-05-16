@@ -40,11 +40,11 @@ class MDMonthlyStatistics:NSObject, NSCoding {
 public class MDStatisticsHelper:NSObject {
     
     /// 图片总数
-    var mdImagesSum = 0
+    var mdTotalImagesSum = 0
     /// 文字总数
-    var mdWordsSum = 0
+    var mdTotalWordsSum = 0
     /// 日记篇数
-    var mdDairySum = 0
+    var mdTotalDairySum = 0
     
     static let sharedInstance = MDStatisticsHelper()
     
@@ -75,25 +75,32 @@ public class MDStatisticsHelper:NSObject {
                 wordsSum += $0.text?.count ?? 0
                 dairySum += 1
             } else {
-                let model = MDMonthlyStatistics(imagesSum: imagesSum, wordsSum: wordsSum, dairySum: dairySum)
-                let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: model, requiringSecureCoding: false)
-                UserDefaults.standard.set(encodedData, forKey: currentMonth)
+                // 保存上个月份的计算数据
+                saveToUserDefault(imagesSum: imagesSum, wordsSum: wordsSum, dairySum: dairySum,monthStringKey: currentMonth)
+                // 得到新的计算月份
                 currentMonth = self.monthString(date: $0.createdDate! as NSDate)
                 imagesSum = $0.imageList?.count ?? 0
                 wordsSum = $0.text?.count ?? 0
                 dairySum = 1
             }
-            mdImagesSum += $0.imageList?.count ?? 0
-            mdWordsSum += $0.text?.count ?? 0
-            mdDairySum += 1
+            saveToUserDefault(imagesSum: imagesSum, wordsSum: wordsSum, dairySum: dairySum,monthStringKey: currentMonth)
+            mdTotalImagesSum += $0.imageList?.count ?? 0
+            mdTotalWordsSum += $0.text?.count ?? 0
+            mdTotalDairySum += 1
         }
     }
     
     /// 重制数据
     func resetData() {
-        mdImagesSum = 0
-        mdWordsSum = 0
-        mdDairySum = 0
+        mdTotalImagesSum = 0
+        mdTotalWordsSum = 0
+        mdTotalDairySum = 0
+    }
+    
+    func saveToUserDefault(imagesSum: Int, wordsSum: Int, dairySum: Int,monthStringKey: String) {
+        let model = MDMonthlyStatistics(imagesSum: imagesSum, wordsSum: wordsSum, dairySum: dairySum)
+        let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: model, requiringSecureCoding: false)
+        UserDefaults.standard.set(encodedData, forKey: monthStringKey)
     }
     
     /// NSDate 转为月份字符串

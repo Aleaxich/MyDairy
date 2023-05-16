@@ -160,6 +160,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A80728452A1271C5001379BD /* MDPhotoWall */ = {
+			isa = PBXGroup;
+			children = (
+				A860EF3F29EC44AA00F057B1 /* MDPhotoWallViewController.swift */,
+				A860EF4129ED291F00F057B1 /* MDPhotoWallCell.swift */,
+				A860EF4329ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift */,
+				A860EF4529ED621600F057B1 /* MDPhotoWallDetailView.swift */,
+				A860EF4729ED631000F057B1 /* MDPhotoDetailViewCell.swift */,
+				A860EF4929EE689E00F057B1 /* MDDetailViewFlowLayout.swift */,
+			);
+			path = MDPhotoWall;
+			sourceTree = "<group>";
+		};
 		A80AD37629BF56FD00AE74F1 = {
 			isa = PBXGroup;
 			children = (
@@ -202,16 +215,11 @@
 		A860EF3829EBDF8700F057B1 /* MDPersonalCenterModule */ = {
 			isa = PBXGroup;
 			children = (
+				A80728452A1271C5001379BD /* MDPhotoWall */,
 				A888099C2A06080B0007A579 /* MDStatistics */,
 				A860EF3929EBE0A000F057B1 /* MDPersonalCenterViewController.swift */,
 				A860EF3B29EBE61200F057B1 /* MDPersonalCenterItemCell.swift */,
 				A860EF3D29EBEA1800F057B1 /* MDPersonalCenterSettingItemModel.swift */,
-				A860EF3F29EC44AA00F057B1 /* MDPhotoWallViewController.swift */,
-				A860EF4129ED291F00F057B1 /* MDPhotoWallCell.swift */,
-				A860EF4329ED2B3C00F057B1 /* MDPhotoWallHeaderView.swift */,
-				A860EF4529ED621600F057B1 /* MDPhotoWallDetailView.swift */,
-				A860EF4729ED631000F057B1 /* MDPhotoDetailViewCell.swift */,
-				A860EF4929EE689E00F057B1 /* MDDetailViewFlowLayout.swift */,
 			);
 			path = MDPersonalCenterModule;
 			sourceTree = "<group>";

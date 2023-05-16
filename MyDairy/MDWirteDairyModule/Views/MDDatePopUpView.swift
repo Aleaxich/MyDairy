@@ -17,11 +17,11 @@ class MDDatePopUpView: MDBasePopover {
     var toolbarPicker = UIToolbar.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH_SWIFT, height: 50))
 
         init(model:MDDairyCommonModel) {
-         datePicker = UIDatePicker.init()
-         datePicker.locale = NSLocale.init(localeIdentifier: "zh") as Locale
-         datePicker.datePickerMode = .date
+        datePicker = UIDatePicker.init()
+        datePicker.locale = NSLocale.init(localeIdentifier: "zh") as Locale
+        datePicker.datePickerMode = .date
         let date = model.createdDate ?? NSDate.now
-         datePicker.setDate(date, animated: true)
+        datePicker.setDate(date, animated: true)
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.backgroundColor = .white
         super.init()

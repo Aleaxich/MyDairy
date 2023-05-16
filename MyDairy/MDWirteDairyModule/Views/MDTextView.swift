@@ -59,7 +59,6 @@ class MDTextView:UIView {
         contextManager.textView = textView
         textView.delegate = self.contextManager
         contextManager.insertPicAction = {[weak self] in
-            print("$0当前对象地址为: \(Unmanaged<AnyObject>.passUnretained($0 as! AnyObject).toOpaque())")
             self?.changeToPicView($0)
         }
         contextManager.caretChange = {[weak self] in
@@ -171,7 +170,6 @@ class MDTextView:UIView {
             make.size.equalTo(CGSize(width: SCREEN_WIDTH_SWIFT, height:350))
             make.top.centerX.equalToSuperview()
         }
-        print("imageDataList当前对象地址为: \(Unmanaged<AnyObject>.passUnretained(imageDataList as! AnyObject).toOpaque())")
         picCollectionView.loadData(imageDataList: imageDataList)
         
         

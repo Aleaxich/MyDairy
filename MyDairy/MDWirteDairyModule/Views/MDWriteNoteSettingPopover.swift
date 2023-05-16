@@ -12,12 +12,6 @@ import RxCocoa
 import Then
 import RxDataSources
 
-
-/*
- 1.所选择的对应
- 
- */
-
 final class MDWriteNoteSettingPopover: MDBasePopover,UITableViewDelegate {
     var manager:MDContextManager
     

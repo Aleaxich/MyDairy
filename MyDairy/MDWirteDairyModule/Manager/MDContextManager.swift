@@ -137,6 +137,8 @@ import RxCocoa
         saved = false
         guard let insertPic = insertPicAction else { return }
         insertPic(model.imageList as! [NSData])
+        SVProgressHUD.showSuccess(withStatus: "添加成功")
+        SVProgressHUD.dismiss(withDelay: 0.5)
     }
     
     // 删除图片

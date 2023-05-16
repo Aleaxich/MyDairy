@@ -46,20 +46,20 @@ public class MDStatisticsViewController: MDBaseViewController {
     }
     
     lazy var dairyNum = UILabel().then {
-        $0.text = "\(MDStatisticsHelper.sharedInstance.mdDairySum)"
+        $0.text = "\(MDStatisticsHelper.sharedInstance.mdTotalDairySum)"
         $0.textAlignment = .center
         $0.font = UIFont(name: "Copperplate-Bold", size: 28)
     }
     
     lazy var textNum = UILabel().then {
-        $0.text = "\(MDStatisticsHelper.sharedInstance.mdWordsSum)"
+        $0.text = "\(MDStatisticsHelper.sharedInstance.mdTotalWordsSum)"
         $0.textAlignment = .center
         $0.font = UIFont(name: "Copperplate-Bold", size: 28)
 
     }
     
     lazy var picturesNum = UILabel().then {
-        $0.text = "\(MDStatisticsHelper.sharedInstance.mdImagesSum)"
+        $0.text = "\(MDStatisticsHelper.sharedInstance.mdTotalImagesSum)"
         $0.textAlignment = .center
         $0.font = UIFont(name: "Copperplate-Bold", size: 28)
     }
@@ -273,6 +273,7 @@ public class MDStatisticsViewController: MDBaseViewController {
         
     }
     
+    /// 根据年份获得数据
     func getStatistics(year:Int) -> [MDMonthlyStatistics] {
         var resList = [MDMonthlyStatistics]()
         for i in  1...12  {

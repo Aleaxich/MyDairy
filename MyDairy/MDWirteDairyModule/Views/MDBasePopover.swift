@@ -45,6 +45,16 @@ typealias selectedAction = (String) -> ()
          return false
     }
     
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let hitview = super.hitTest(point, with: event)
+        if hitview == self {
+            dismiss()
+            return nil
+        } else {
+            return hitview
+        }
+    }
+    
     
     func show() {
         let window = UIApplication.shared.windows.first(where: \.isKeyWindow)
